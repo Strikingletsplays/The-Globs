@@ -39,7 +39,7 @@ public class PlayerFollow : MonoBehaviour
             if (!(Vector2.Distance(transform.position, Player.position) < stopRange))
             {
                 transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
-                if ((Player.position.y - this.transform.position.y) > 1 && m_Grounded)
+                if ((Player.position.y - this.transform.position.y) > 2 && m_Grounded)
                 {
                     //jump
                     this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
