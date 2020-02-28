@@ -8,13 +8,15 @@ public class EnemyDamage : MonoBehaviour
     {
         if(collision.gameObject.name == "ParentGlob")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(-20,10);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage();
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 400.0f);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward * 400.0f);
         }
-        if (collision.gameObject.name == "babyglob")
+        if (collision.gameObject.name == "BabyGlob")
         {
-            //kill baby
-            collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            collision.gameObject.GetComponent<BabyHealth>().TakeDamage();
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 400.0f);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward * 400.0f);
         }
     }
 }

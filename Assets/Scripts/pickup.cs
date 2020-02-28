@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class pickup : MonoBehaviour
 {
-    public Transform theDest;
+    private Transform theDest;
     private Transform player;
     private bool isHolding;
 
-    void Start()
+    void Awake()
     {
+        theDest = GameObject.FindGameObjectWithTag("Destination").transform;
         isHolding = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
