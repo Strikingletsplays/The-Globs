@@ -18,11 +18,12 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X)){
-          TakeDamage(1);
+        if(CurentHealth <= 0)
+        {
+            //enable death gui
         }
     }
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         CurentHealth -= damage;
         healthbar.SetHealth(CurentHealth);
