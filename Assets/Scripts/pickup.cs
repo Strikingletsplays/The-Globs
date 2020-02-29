@@ -11,17 +11,18 @@ public class pickup : MonoBehaviour
 
     void Awake()
     {
-        theDest = GameObject.FindGameObjectWithTag("Destination").transform;
         isHolding = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        theDest = GameObject.FindGameObjectWithTag("Destination").transform;
     }
     private void Update()
     {
         if (isHolding)
         {
             this.GetComponent<Rigidbody2D>().simulated = false;
-            this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             this.GetComponent<Rigidbody2D>().angularVelocity = 0;
+            this.GetComponent<CircleCollider2D>().enabled = false;
         }
         
     }
@@ -42,6 +43,7 @@ public class pickup : MonoBehaviour
         this.transform.parent = null;
         GetComponent<Rigidbody2D>().gravityScale = 3;
         this.GetComponent<Rigidbody2D>().simulated = true;
+        this.GetComponent<CircleCollider2D>().enabled = true;
     }
 
 }

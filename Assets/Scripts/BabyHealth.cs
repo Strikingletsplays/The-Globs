@@ -26,11 +26,11 @@ public class BabyHealth : MonoBehaviour
             Health++;
             //increase scale
             if(this.gameObject.GetComponent<Transform>().localScale.x > 0) {
-                ScaleChangeSize = new Vector3(0.06f, 0.06f, 0.06f);
+                ScaleChangeSize = new Vector3(0.1f, 0.1f, 0.1f);
                 this.transform.localScale += ScaleChangeSize;
             }
             else {
-                ScaleChangeSize = new Vector3(-0.06f, 0.06f, 0.06f);
+                ScaleChangeSize = new Vector3(-0.1f, 0.1f, 0.1f);
                 this.transform.localScale += ScaleChangeSize;
             }
         }

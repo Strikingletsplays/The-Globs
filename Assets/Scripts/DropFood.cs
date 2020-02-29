@@ -18,16 +18,16 @@ public class DropFood : MonoBehaviour
                 food.GetComponent<Rigidbody2D>().simulated = true;
             }else if (food2.GetComponent<Rigidbody2D>().simulated == false)
             {
-                food.GetComponent<pickup>().enabled = true;
+                food2.GetComponent<pickup>().enabled = true;
                 food2.GetComponent<Rigidbody2D>().simulated = true;
             }else if (food3.GetComponent<Rigidbody2D>().simulated == false)
             {
-                food.GetComponent<pickup>().enabled = true;
+                food3.GetComponent<pickup>().enabled = true;
                 food3.GetComponent<Rigidbody2D>().simulated = true;
             }
             else if (food4.GetComponent<Rigidbody2D>().simulated == false)
             {
-                food.GetComponent<pickup>().enabled = true;
+                food4.GetComponent<pickup>().enabled = true;
                 food4.GetComponent<Rigidbody2D>().simulated = true;
             }
         }
