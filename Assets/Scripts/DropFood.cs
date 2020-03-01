@@ -8,8 +8,7 @@ public class DropFood : MonoBehaviour
     bool isTime = true;
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
-        //Enable Ui
+        //Enable Ui (Click on tree for food!!)
 
         //Enables RB simulation
         if (Input.GetMouseButtonDown(0) && isTime)

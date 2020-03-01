@@ -40,13 +40,24 @@ public class PlayerFollow : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
                 //flip to players direction
-                if(Player.position.x > this.transform.position.x && Player.transform.localScale.x < 0)
+                if(Player.position.x > this.transform.position.x)
                 {
-                    transform.eulerAngles = new Vector3(0, 0, 0); // flip right
+                        transform.eulerAngles = new Vector3(0, 0, 0); // flip right
                 }
-                else if (Player.position.x < transform.position.x && Player.transform.localScale.x > 0)
+                else if (Player.position.x < transform.position.x)
                 {
-                    transform.eulerAngles = new Vector3(0, 180, 0); //flip left
+                        transform.eulerAngles = new Vector3(0, 180, 0); //flip left
+                }
+                if (transform.localScale.x < 0) // If he is placed by parent with inverse scale
+                {
+                    if (Player.position.x > this.transform.position.x)
+                    {
+                        transform.eulerAngles = new Vector3(0, 180, 0); 
+                    }
+                    else if (Player.position.x < transform.position.x)
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, 0); 
+                    }
                 }
                 if ((Player.position.y - this.transform.position.y) > 2.2 && m_Grounded)
                 {
