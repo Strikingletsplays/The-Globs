@@ -173,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7142864502083964883}
   m_LocalRotation: {x: -0, y: -0, z: -0.02630225, w: 0.99965405}
-  m_LocalPosition: {x: 0.504, y: 0.803, z: 45.125175}
+  m_LocalPosition: {x: 0.504, y: 0.78, z: 45.125175}
   m_LocalScale: {x: 3.784, y: 3.784, z: 3.784}
   m_Children: []
   m_Father: {fileID: 7142864503446233516}
@@ -242,10 +242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7e2517a4fcc9f479134536174ac283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 7142864502074711377}
-  food2: {fileID: 7142864502438843771}
-  food3: {fileID: 7142864503622058958}
-  food4: {fileID: 7142864503672732563}
+  foods:
+  - {fileID: 7142864502074711377}
+  - {fileID: 7142864502438843771}
+  - {fileID: 7142864503622058958}
+  - {fileID: 7142864503672732563}
 --- !u!68 &3695349488368034764
 EdgeCollider2D:
   m_ObjectHideFlags: 0

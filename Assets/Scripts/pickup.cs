@@ -9,6 +9,7 @@ public class pickup : MonoBehaviour
     private Transform player;
     private bool isHolding;
 
+
     void Awake()
     {
         isHolding = false;
@@ -22,20 +23,17 @@ public class pickup : MonoBehaviour
             this.GetComponent<Rigidbody2D>().simulated = false;
             this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             this.GetComponent<Rigidbody2D>().angularVelocity = 0;
-            this.GetComponent<CircleCollider2D>().enabled = false;
         }
-        
     }
     void OnMouseDown()
     {
-        //Debug.Log(player.position.x - me.transform.position.x);
-        if (((player.position.x - this.transform.position.x) < 1.5 && (player.position.y - this.transform.position.y) < 1))
-        {
-            isHolding = true;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-            this.gameObject.transform.position = theDest.position;
-            this.transform.parent = GameObject.Find("Destination").transform;
-        }
+            if (((player.GetChild(2).position.x - this.transform.position.x) < 1.5 && (player.GetChild(2).position.y - this.transform.position.y) < 1))
+            {
+                isHolding = true;
+                GetComponent<Rigidbody2D>().gravityScale = 0;
+                this.gameObject.transform.position = theDest.position;
+                this.transform.parent = GameObject.Find("Destination").transform;
+            }
     }
     void OnMouseUp()
     {
@@ -43,7 +41,6 @@ public class pickup : MonoBehaviour
         this.transform.parent = null;
         GetComponent<Rigidbody2D>().gravityScale = 3;
         this.GetComponent<Rigidbody2D>().simulated = true;
-        this.GetComponent<CircleCollider2D>().enabled = true;
     }
 
 }

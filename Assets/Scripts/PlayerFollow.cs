@@ -40,11 +40,11 @@ public class PlayerFollow : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
                 //flip to players direction
-                if(Player.position.x > this.transform.position.x)
+                if(Player.position.x > this.transform.position.x && Player.transform.localScale.x < 0)
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0); // flip right
                 }
-                else if (Player.position.x < transform.position.x)
+                else if (Player.position.x < transform.position.x && Player.transform.localScale.x > 0)
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0); //flip left
                 }

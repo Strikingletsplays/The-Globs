@@ -4,32 +4,40 @@ using UnityEngine;
 
 public class DropFood : MonoBehaviour
 {
-    public GameObject food,food2,food3,food4;
+    public GameObject[] foods;
+    bool isTime = true;
     private void OnTriggerStay2D(Collider2D collision)
     {
+        
         //Enable Ui
 
         //Enables RB simulation
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && isTime)
         {
-            if(food.GetComponent<Rigidbody2D>().simulated == false)
+            isTime = false;
+            if (foods[0].GetComponent<Rigidbody2D>().simulated == false)
             {
-                food.GetComponent<pickup>().enabled = true;
-                food.GetComponent<Rigidbody2D>().simulated = true;
-            }else if (food2.GetComponent<Rigidbody2D>().simulated == false)
+                foods[0].GetComponent<pickup>().enabled = true;
+                foods[0].GetComponent<Rigidbody2D>().simulated = true;
+            }else if (foods[1].GetComponent<Rigidbody2D>().simulated == false)
             {
-                food2.GetComponent<pickup>().enabled = true;
-                food2.GetComponent<Rigidbody2D>().simulated = true;
-            }else if (food3.GetComponent<Rigidbody2D>().simulated == false)
+                foods[1].GetComponent<pickup>().enabled = true;
+                foods[1].GetComponent<Rigidbody2D>().simulated = true;
+            }else if (foods[2].GetComponent<Rigidbody2D>().simulated == false)
             {
-                food3.GetComponent<pickup>().enabled = true;
-                food3.GetComponent<Rigidbody2D>().simulated = true;
+                foods[2].GetComponent<pickup>().enabled = true;
+                foods[2].GetComponent<Rigidbody2D>().simulated = true;
             }
-            else if (food4.GetComponent<Rigidbody2D>().simulated == false)
+            else if (foods[3].GetComponent<Rigidbody2D>().simulated == false)
             {
-                food4.GetComponent<pickup>().enabled = true;
-                food4.GetComponent<Rigidbody2D>().simulated = true;
+                foods[3].GetComponent<pickup>().enabled = true;
+                foods[3].GetComponent<Rigidbody2D>().simulated = true;
             }
+            Invoke("setTimer", 0.4f);
         }
+    }
+    void setTimer()
+    {
+        isTime = true;
     }
 }

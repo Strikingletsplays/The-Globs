@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float walkSpeed = 20f;
     float horizontalMove = 0f;
+    //float verticalMove = 0f;
     bool jump = false;
     bool crouch = false;
     //Change friction
