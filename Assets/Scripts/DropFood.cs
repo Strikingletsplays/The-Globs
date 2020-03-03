@@ -14,20 +14,20 @@ public class DropFood : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isTime)
         {
             isTime = false;
-            if (foods[0].GetComponent<Rigidbody2D>().simulated == false)
+            if (foods[0] != null)
             {
                 foods[0].GetComponent<pickup>().enabled = true;
                 foods[0].GetComponent<Rigidbody2D>().simulated = true;
-            }else if (foods[1].GetComponent<Rigidbody2D>().simulated == false)
+            }else if (foods[1] != null)
             {
                 foods[1].GetComponent<pickup>().enabled = true;
                 foods[1].GetComponent<Rigidbody2D>().simulated = true;
-            }else if (foods[2].GetComponent<Rigidbody2D>().simulated == false)
+            }else if (foods[2] != null)
             {
                 foods[2].GetComponent<pickup>().enabled = true;
                 foods[2].GetComponent<Rigidbody2D>().simulated = true;
             }
-            else if (foods[3].GetComponent<Rigidbody2D>().simulated == false)
+            else if (foods[3] != null)
             {
                 foods[3].GetComponent<pickup>().enabled = true;
                 foods[3].GetComponent<Rigidbody2D>().simulated = true;

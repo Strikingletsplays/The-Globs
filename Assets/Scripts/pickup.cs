@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class pickup : MonoBehaviour
 {
     private Transform theDest;
     private Transform player;
     private bool isHolding;
+    private GameObject Pickup;
 
 
     void Awake()
@@ -15,18 +17,29 @@ public class pickup : MonoBehaviour
         isHolding = false;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         theDest = GameObject.FindGameObjectWithTag("Destination").transform;
+        Pickup = GameObject.FindGameObjectWithTag("PickUp");
+        Pickup.GetComponent<Image>().enabled = true;
     }
     private void Update()
     {
         if (isHolding)
         {
+            Pickup.GetComponent<Image>().enabled = false;
             this.GetComponent<Rigidbody2D>().simulated = false;
             this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            this.GetComponent<Rigidbody2D>().angularVelocity = 0;
         }
-        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.5 && (player.GetChild(2).position.y - this.transform.position.y) < 1))
+        //FOR UI!! OMG...
+        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.5 && (player.GetChild(2).position.y - this.transform.position.y) < 1) && !isHolding)
         {
-            //Enable Ui (To pick up an object, click on it with your mouse.)
+            Pickup.GetComponent<Image>().enabled = true;
+        }
+        else if ((player.GetChild(2).position.x - this.transform.position.x) > 1.5)
+        {
+            Pickup.GetComponent<Image>().enabled = false;
+        }
+        if ((this.transform.position.x - player.GetChild(2).position.x) > 3)
+        {
+            Pickup.GetComponent<Image>().enabled = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

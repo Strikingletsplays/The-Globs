@@ -16,6 +16,9 @@ public class PlayerFollow : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck = null;
     [SerializeField] public LayerMask m_WhatIsGround;
 
+    //Flip canvas
+    public Canvas Canvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,21 +45,25 @@ public class PlayerFollow : MonoBehaviour
                 //flip to players direction
                 if(Player.position.x > this.transform.position.x)
                 {
-                        transform.eulerAngles = new Vector3(0, 0, 0); // flip right
+                    transform.eulerAngles = new Vector3(0, 0, 0); // flip right
+                    Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 0, this.transform.eulerAngles.z);
                 }
                 else if (Player.position.x < transform.position.x)
                 {
-                        transform.eulerAngles = new Vector3(0, 180, 0); //flip left
+                    transform.eulerAngles = new Vector3(0, 180, 0); //flip left
+                    Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 180, this.transform.eulerAngles.z);
                 }
                 if (transform.localScale.x < 0) // If he is placed by parent with inverse scale
                 {
                     if (Player.position.x > this.transform.position.x)
                     {
-                        transform.eulerAngles = new Vector3(0, 180, 0); 
+                        transform.eulerAngles = new Vector3(0, 180, 0);
+                        Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 0, this.transform.eulerAngles.z);
                     }
                     else if (Player.position.x < transform.position.x)
                     {
-                        transform.eulerAngles = new Vector3(0, 0, 0); 
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 180, this.transform.eulerAngles.z);
                     }
                 }
                 if ((Player.position.y - this.transform.position.y) > 2.2 && m_Grounded)

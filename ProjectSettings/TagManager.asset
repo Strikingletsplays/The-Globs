@@ -7,6 +7,9 @@ TagManager:
   - BabyGlob
   - Destination
   - Food
+  - Hungry
+  - Happy
+  - PickUp
   layers:
   - Default
   - TransparentFX

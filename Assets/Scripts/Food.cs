@@ -11,17 +11,13 @@ public class Food : MonoBehaviour
                 //Enable FOOD UI
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    Destroy(this.gameObject.GetComponent<Renderer>());
-                    Destroy(this.gameObject.GetComponent<CircleCollider2D>());
-                    Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                     collision.gameObject.GetComponent<PlayerHealth>().increceHealth();
+                    Destroy(this.gameObject);
                 }
             }else if (collision.gameObject.tag == "BabyGlob")
             {
-                Destroy(this.gameObject.GetComponent<Renderer>());
-                Destroy(this.gameObject.GetComponent<CircleCollider2D>());
-                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
-                collision.gameObject.GetComponent<BabyHealth>().increceHealth();
+                  collision.gameObject.GetComponent<BabyHealth>().increceHealth();
+                  Destroy(this.gameObject);
             }
         }
 }
