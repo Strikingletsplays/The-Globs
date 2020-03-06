@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class Enemy_Move : MonoBehaviour
 {
-    private Vector3 PlayerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+    private Transform PlayerPos;
     public float Speed = 2;
+    public float MinDistance = 5;
 
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.position.x - PlayerPos.x < 2)
+        PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        if (Vector2.Distance(this.transform.position, PlayerPos.position) < MinDistance)
         {
-            transform.position = transform.forward * Speed * Time.deltaTime;
+            GetComponentInChildren<Animator>().SetBool("isMoving", true);
+            transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position,  Speed * Time.deltaTime);
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().SetBool("isMoving", false);
+            
+        }
+
+        //if Atacking
+        if (Vector2.Distance(this.transform.position, PlayerPos.position) < 1.5)
+        {
+            GetComponentInChildren<Animator>().SetBool("isAtacking", true);
+        }
+        else { GetComponentInChildren<Animator>().SetBool("isAtacking", false); }
+
+        if (this.transform.position.x - PlayerPos.position.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }
