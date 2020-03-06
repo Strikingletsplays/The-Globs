@@ -11,7 +11,6 @@ public class pickup : MonoBehaviour
     private bool isHolding;
     private GameObject Pickup;
 
-
     void Awake()
     {
         isHolding = false;
@@ -29,29 +28,29 @@ public class pickup : MonoBehaviour
             this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
         //FOR UI!! OMG...
-        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.5 && (player.GetChild(2).position.y - this.transform.position.y) < 1) && !isHolding)
+        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.3 && (player.GetChild(2).position.y - this.transform.position.y) < 1) && !isHolding)
         {
             Pickup.GetComponent<Image>().enabled = true;
         }
-        else if ((player.GetChild(2).position.x - this.transform.position.x) > 1.5)
+        else if ((player.GetChild(2).position.x - this.transform.position.x) > 1.3)
         {
             Pickup.GetComponent<Image>().enabled = false;
         }
-        if ((this.transform.position.x - player.GetChild(2).position.x) > 3)
+        if ((this.transform.position.x - player.GetChild(2).position.x) > 1.3)
         {
             Pickup.GetComponent<Image>().enabled = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && this.tag == "Food")
+        if (collision.gameObject.tag == "Player" && this.tag == "Food" )
         {
             //Enable Ui (To Eat the food, Press [F])
         }
     }
     void OnMouseDown()
     {
-        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.5 && (player.GetChild(2).position.y - this.transform.position.y) < 1))
+        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.3 && (player.GetChild(2).position.y - this.transform.position.y) < 1))
         {
             isHolding = true;
             GetComponent<Rigidbody2D>().gravityScale = 0;
