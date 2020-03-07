@@ -2,68 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class pickup : MonoBehaviour
 {
-    private Transform theDest;
-    private Transform player;
-    private bool isHolding;
-    private GameObject Pickup;
+    public Transform PlayersHoldingPossition;
+    public bool isHolding;
+    public bool isClose; 
 
     void Awake()
     {
         isHolding = false;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        theDest = GameObject.FindGameObjectWithTag("Destination").transform;
-        Pickup = GameObject.FindGameObjectWithTag("PickUp");
-        Pickup.GetComponent<Image>().enabled = true;
+        PlayersHoldingPossition = GameObject.FindGameObjectWithTag("Destination").transform;
     }
-    private void Update()
+    void Update()
     {
+        isClose = ((transform.position.x - PlayersHoldingPossition.position.x ) < .5) && (PlayersHoldingPossition.position.y - transform.position.y) < 0.6;
         if (isHolding)
         {
-            Pickup.GetComponent<Image>().enabled = false;
-            this.GetComponent<Rigidbody2D>().simulated = false;
-            this.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        }
-        //FOR UI!! OMG...
-        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.3 && (player.GetChild(2).position.y - this.transform.position.y) < 1) && !isHolding)
-        {
-            Pickup.GetComponent<Image>().enabled = true;
-        }
-        else if ((player.GetChild(2).position.x - this.transform.position.x) > 1.3)
-        {
-            Pickup.GetComponent<Image>().enabled = false;
-        }
-        if ((this.transform.position.x - player.GetChild(2).position.x) > 1.3)
-        {
-            Pickup.GetComponent<Image>().enabled = false;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && this.tag == "Food" )
-        {
-            //Enable Ui (To Eat the food, Press [F])
+            GetComponent<Rigidbody2D>().simulated = false;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }
     void OnMouseDown()
     {
-        if (((player.GetChild(2).position.x - this.transform.position.x) < 1.3 && (player.GetChild(2).position.y - this.transform.position.y) < 1))
+        if (isClose)
         {
             isHolding = true;
             GetComponent<Rigidbody2D>().gravityScale = 0;
-            this.gameObject.transform.position = theDest.position;
-            this.transform.parent = GameObject.Find("Destination").transform;
+            gameObject.transform.position = PlayersHoldingPossition.position;
+            transform.parent = GameObject.Find("Destination").transform;
         }
     }
     void OnMouseUp()
     {
         isHolding = false;
-        this.transform.parent = null;
+        transform.parent = null;
         GetComponent<Rigidbody2D>().gravityScale = 3;
-        this.GetComponent<Rigidbody2D>().simulated = true;
+        GetComponent<Rigidbody2D>().simulated = true;
     }
 
 }

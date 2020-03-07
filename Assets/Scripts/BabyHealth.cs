@@ -12,28 +12,23 @@ public class BabyHealth : MonoBehaviour
     //Ui Elements
     public HealthBar HealthBar;
     public GameObject Hungry; 
-    public GameObject HungryGlobal;
     public GameObject Happy;
-    public GameObject Horrible;
 
     private void Start()
     {
         HealthBar.SetMaxHealth(MaxHealth);
-        Hungry.GetComponent<SpriteRenderer>().enabled = false;
+        HealthBar.SetHealth(Health);
+        Hungry.GetComponent<SpriteRenderer>().enabled = true;
         Happy.GetComponent<SpriteRenderer>().enabled = false;
-        Horrible.GetComponent<Image>().enabled = false;
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        HealthBar.SetHealth(Health);
         if (Health <= 0)
         {
             //kill b_Glob
             Destroy(this.gameObject);
-            HungryGlobal.GetComponent<Image>().enabled = false;
             Hungry.GetComponent<SpriteRenderer>().enabled = false;
-            Horrible.GetComponent<Image>().enabled = true;
             //Enable :((( UI
         }
         if(Health >= 4)
@@ -42,7 +37,6 @@ public class BabyHealth : MonoBehaviour
             Happy.GetComponent<SpriteRenderer>().enabled = true;
             HealthBar.enabled = false;
             Hungry.GetComponent<SpriteRenderer>().enabled = false;
-            HungryGlobal.GetComponent<Image>().enabled = false;
             Health = 4;
         }
         else
@@ -50,7 +44,7 @@ public class BabyHealth : MonoBehaviour
             //enable hungry UI
             Happy.GetComponent<SpriteRenderer>().enabled = false;
             HealthBar.enabled = true;
-            HungryGlobal.GetComponent<Image>().enabled = true;
+            //HungryGlobal.GetComponent<Image>().enabled = true;
             Hungry.GetComponent<SpriteRenderer>().enabled = true;
         }
     }

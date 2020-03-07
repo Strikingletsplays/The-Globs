@@ -10,7 +10,7 @@ public class Ladders : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         anim = other.GetComponent<Animator>();
-        if ((other.tag=="Player" || other.tag == "BabyGlob") && Input.GetKey(KeyCode.W))
+        if (other.tag=="Player" && Input.GetKey(KeyCode.W))
         {
             anim.SetBool("isClimbing", true);
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, climeSpeed);
@@ -27,6 +27,11 @@ public class Ladders : MonoBehaviour
             anim.SetBool("isClimbing", false);
             other.GetComponent<Rigidbody2D>().gravityScale = 3;
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+        if (other.tag == "BabyGlob")
+        {
+            this.anim.SetBool("isClimbing", true);
+            other.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class DropFood : MonoBehaviour
 {
+    private int food_size;
     public GameObject[] foods;
     bool isTime = true;
+    private void Start()
+    {
+        food_size = foods.Length;
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Enable Ui (Click on tree for food!!)
@@ -14,25 +19,18 @@ public class DropFood : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isTime)
         {
             isTime = false;
-            if (foods[0] != null)
+            for (int i = 0; i<food_size; i++)
             {
-                foods[0].GetComponent<pickup>().enabled = true;
-                foods[0].GetComponent<Rigidbody2D>().simulated = true;
-            }else if (foods[1] != null)
-            {
-                foods[1].GetComponent<pickup>().enabled = true;
-                foods[1].GetComponent<Rigidbody2D>().simulated = true;
-            }else if (foods[2] != null)
-            {
-                foods[2].GetComponent<pickup>().enabled = true;
-                foods[2].GetComponent<Rigidbody2D>().simulated = true;
+                if(foods[i])
+                    if (!(foods[i].GetComponent<Rigidbody2D>().simulated))
+                    {
+                        foods[i].GetComponent<pickup>().enabled = true;
+                        foods[i].GetComponent<Rigidbody2D>().simulated = true;
+                        break;
+                    }
             }
-            else if (foods[3] != null)
-            {
-                foods[3].GetComponent<pickup>().enabled = true;
-                foods[3].GetComponent<Rigidbody2D>().simulated = true;
-            }
-            Invoke("setTimer", 0.4f);
+            //So double clicks dont drop 2
+            Invoke("setTimer", 0.6f);
         }
     }
     void setTimer()

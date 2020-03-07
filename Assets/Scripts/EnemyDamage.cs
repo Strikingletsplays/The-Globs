@@ -12,7 +12,7 @@ public class EnemyDamage : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 400.0f);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.forward * 400.0f);
         }
-        if (collision.gameObject.name == "BabyGlob")
+        if (collision.gameObject.tag == "BabyGlob")
         {
             collision.gameObject.GetComponent<BabyHealth>().TakeDamage();
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * 400.0f);
