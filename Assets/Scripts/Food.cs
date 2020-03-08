@@ -22,7 +22,6 @@ public class Food : MonoBehaviour
         if (collision.gameObject.tag == "BabyGlob")
         {
             collision.gameObject.GetComponent<BabyHealth>().increceHealth();
-            Pickup.enabled = false;
             Destroy(this.gameObject);
         }
     }
@@ -39,7 +38,7 @@ public class Food : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && inTrigger)
         {
             Player.GetComponent<PlayerHealth>().increceHealth();
-            Pickup.enabled = false; //NOT WORKING!!
+            Pickup.enabled = false; 
             Destroy(this.gameObject);
         }
         

@@ -27,9 +27,8 @@ public class BabyHealth : MonoBehaviour
         if (Health <= 0)
         {
             //kill b_Glob
-            Destroy(this.gameObject);
             Hungry.GetComponent<SpriteRenderer>().enabled = false;
-            //Enable :((( UI
+            Destroy(this.gameObject);
         }
         if(Health >= 4)
         {

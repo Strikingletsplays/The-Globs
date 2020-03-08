@@ -7,7 +7,8 @@ public class pickup : MonoBehaviour
 {
     public Transform PlayersHoldingPossition;
     public bool isHolding;
-    public bool isClose; 
+    public bool isClose;
+    private float distance;
 
     void Awake()
     {
@@ -16,13 +17,15 @@ public class pickup : MonoBehaviour
     }
     void Update()
     {
-        isClose = ((transform.position.x - PlayersHoldingPossition.position.x ) < .5) && (PlayersHoldingPossition.position.y - transform.position.y) < 0.6;
+        distance = Vector3.Distance(transform.position, PlayersHoldingPossition.position);
+        isClose = (distance < .7);
         if (isHolding)
         {
             GetComponent<Rigidbody2D>().simulated = false;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
     }
+
     void OnMouseDown()
     {
         if (isClose)
