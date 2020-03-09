@@ -11,8 +11,9 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 ScaleChangeSize;
     public GameObject baby;
     public Image NewBaby;
-    //Spawn Baby Position
-    private Transform SpawnBaby;
+    //Spawn Baby
+    private Transform SpawnBaby; //Position
+    public GlobPickupUI AllBabys; // Add to list of globs
     //Flip canvas
     public Canvas Canvas;
     //Ui
@@ -85,7 +86,8 @@ public class PlayerHealth : MonoBehaviour
         }else if(Health == 4)
         {
             NewBaby.enabled = true;
-            Instantiate(baby, SpawnBaby.position, transform.rotation);
+            GameObject NewBbay = Instantiate(baby, SpawnBaby.position, transform.rotation);
+            AllBabys.Globs.Add(NewBbay);
             //wait for 2 second
             StartCoroutine(disableNewGlobUI(2f));
         }
