@@ -37,42 +37,53 @@ public class PlayerFollow : MonoBehaviour
                 m_Grounded = true;
             }
         }
+
         if (Vector2.Distance(transform.position, Player.position) < FollowRange)
         {
             if (!(Vector2.Distance(transform.position, Player.position) < stopRange))
             {
                 transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
-                //flip to players direction
-                if(Player.position.x > this.transform.position.x)
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0); // flip right
-                    Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 0, this.transform.eulerAngles.z);
-                }
-                else if (Player.position.x < transform.position.x)
-                {
-                    transform.eulerAngles = new Vector3(0, 180, 0); //flip left
-                    Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 180, this.transform.eulerAngles.z);
-                }
-                if (transform.localScale.x < 0) // If he is placed by parent with inverse scale
-                {
-                    if (Player.position.x > this.transform.position.x)
-                    {
-                        transform.eulerAngles = new Vector3(0, 180, 0);
-                        Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 0, this.transform.eulerAngles.z);
-                    }
-                    else if (Player.position.x < transform.position.x)
-                    {
-                        transform.eulerAngles = new Vector3(0, 0, 0);
-                        Canvas.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y + 180, this.transform.eulerAngles.z);
-                    }
-                }
-                if ((Player.position.y - this.transform.position.y) > 2.2 && m_Grounded)
+                if ((Player.position.y - transform.position.y) > 2.2 && m_Grounded)
                 {
                     //jump
-                    this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+                    GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
                 }
             }
         }
         
+    }
+    private void Update()
+    {
+        //flip Baby Glob to players direction 
+        if (Player.position.x > transform.position.x) //if player is on the right
+        {
+            if (transform.localScale.x < 0) //if Baby Glob is facing right
+            {
+                //Debug.Log("When scale Fliped");
+                transform.eulerAngles = new Vector3(0, 180, 0); //facing Right
+                Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 0, transform.eulerAngles.z); //UI facing Right
+            }
+            else
+            {
+                //Debug.Log("When scale Normal");
+                transform.eulerAngles = new Vector3(0, 0, 0);  //facing Right
+                Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 0, transform.eulerAngles.z); //UI facing Right
+            }
+        }
+        else if (Player.position.x < transform.position.x) //if player is on the left
+        {
+            if (transform.localScale.x < 0) //if Baby Glob is facing right
+            {
+                //Debug.Log("When scale Fliped");
+                transform.eulerAngles = new Vector3(0, 0, 0);  //facing Left
+                Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z); //UI facing Left
+            }
+            else
+            {
+                //Debug.Log("When scale Normal");
+                transform.eulerAngles = new Vector3(0, 180, 0); //facing Left
+                Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z); //UI facing Left
+            }
+        }
     }
 }

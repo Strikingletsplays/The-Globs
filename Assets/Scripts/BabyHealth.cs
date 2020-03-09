@@ -43,7 +43,6 @@ public class BabyHealth : MonoBehaviour
             //enable hungry UI
             Happy.GetComponent<SpriteRenderer>().enabled = false;
             HealthBar.enabled = true;
-            //HungryGlobal.GetComponent<Image>().enabled = true;
             Hungry.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
@@ -53,13 +52,13 @@ public class BabyHealth : MonoBehaviour
             Health++;
             HealthBar.SetHealth(Health);
             //increase scale
-            if (this.gameObject.GetComponent<Transform>().localScale.x > 0) {
+            if (gameObject.GetComponent<Transform>().localScale.x > 0) {
                 ScaleChangeSize = new Vector3(0.1f, 0.1f, 0.1f);
-                this.transform.localScale += ScaleChangeSize;
+                transform.localScale += ScaleChangeSize;
             }
             else {
                 ScaleChangeSize = new Vector3(-0.1f, 0.1f, 0.1f);
-                this.transform.localScale += ScaleChangeSize;
+                transform.localScale += ScaleChangeSize;
             }
         }
     }
@@ -68,13 +67,13 @@ public class BabyHealth : MonoBehaviour
         Health--;
         HealthBar.SetHealth(Health);
         //decrese scale
-        if (this.gameObject.GetComponent<Transform>().localScale.x > 0)
+        if (gameObject.GetComponent<Transform>().localScale.x > 0)
          {
             ScaleChangeSize = new Vector3(-0.1f, -0.1f, -0.1f);
-            this.transform.localScale += ScaleChangeSize;
+            transform.localScale += ScaleChangeSize;
         }else{
             ScaleChangeSize = new Vector3(0.1f, -0.1f, -0.1f);
-            this.transform.localScale += ScaleChangeSize;
+            transform.localScale += ScaleChangeSize;
         }
     }
 }

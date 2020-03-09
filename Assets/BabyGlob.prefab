@@ -60,7 +60,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -2105826941
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1252985062373628402
 MonoBehaviour:
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2105826941
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 143aac6d991d91f4da0c6ab0a304dbb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -710,6 +710,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de05e38e8a44bfd48b472687263d6653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayersHoldingPossition: {fileID: 0}
+  isHolding: 0
+  isClose: 0
 --- !u!95 &1252985064190651517
 Animator:
   serializedVersion: 3
@@ -831,7 +834,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2105826941
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a9b447bae13dc0b4e89e6a0820245468, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

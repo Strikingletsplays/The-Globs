@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class PlayerHealth : MonoBehaviour
     public int Health;
     private Vector3 ScaleChangeSize;
     public GameObject baby;
-    
-
+    public Image NewBaby;
+    //Spawn Baby Position
+    private Transform SpawnBaby;
+    //Flip canvas
+    public Canvas Canvas;
+    //Ui
     public HealthBar healthbar;
     // Start is called before the first frame update
     void Start()
@@ -18,12 +23,22 @@ public class PlayerHealth : MonoBehaviour
         Health = 2;
         healthbar.SetMaxHealth(MaxHealth);
         healthbar.SetHealth(Health);
+        SpawnBaby = GameObject.FindGameObjectWithTag("Destination").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Health <= 0)
+        //flip canvas
+        if (transform.localScale.x < 0)
+        {
+            Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
+        }
+        else
+        {
+            Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 0, transform.eulerAngles.z);
+        }
+        if (Health <= 0)
         {
             //enable death gui
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -53,7 +68,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Health < 4)
         {
-            Health++;
             //increase scale when he is facing laft or right
             if (this.gameObject.GetComponent<Transform>().localScale.x > 0)
             {
@@ -65,11 +79,21 @@ public class PlayerHealth : MonoBehaviour
                 ScaleChangeSize = new Vector3(-0.25f, 0.25f, 0.25f);
                 this.transform.localScale += ScaleChangeSize;
             }
-            Health += 1;
+            Health++;
             healthbar.SetHealth(Health);
         }else if(Health == 4)
         {
-            Instantiate(baby, transform.position, transform.rotation);
+            NewBaby.enabled = true;
+            Instantiate(baby, SpawnBaby.position, transform.rotation);
+            //wait for 2 second
+            StartCoroutine(disableNewGlobUI(2f));
         }
+    }
+    IEnumerator disableNewGlobUI(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        NewBaby.enabled = false;
+        yield return null;
+
     }
 }
