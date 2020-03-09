@@ -58,11 +58,4 @@ public class UIpickup : MonoBehaviour
                 Pickup.enabled = false;
             }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player" && tag == "Food")
-        {
-            //Enable Ui (To Eat the food, Press [F])
-        }
-    }
 }
