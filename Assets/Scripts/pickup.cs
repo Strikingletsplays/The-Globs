@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class pickup : MonoBehaviour
 {
-    public Transform PlayersHoldingPossition;
+    private Transform PlayersHoldingPossition;
     public bool isHolding;
     public bool isClose;
     private float distance;
@@ -31,6 +31,7 @@ public class pickup : MonoBehaviour
             //GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             gameObject.transform.position = PlayersHoldingPossition.position;
             transform.parent = GameObject.Find("Destination").transform;
+
         }
     }
     void OnMouseUp()

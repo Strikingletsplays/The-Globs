@@ -3098,6 +3098,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1894955630}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &868022340 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1252985062373628403, guid: 3a8a1989db853f44794a6fa7347bae3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1252985063670791526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &869129945
 GameObject:
   m_ObjectHideFlags: 0
@@ -7124,6 +7130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BabyGlob
       objectReference: {fileID: 0}
+    - target: {fileID: 1252985064190651516, guid: 3a8a1989db853f44794a6fa7347bae3c,
+        type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 868022340}
     - target: {fileID: 1252985064190651518, guid: 3a8a1989db853f44794a6fa7347bae3c,
         type: 3}
       propertyPath: m_LocalPosition.x
