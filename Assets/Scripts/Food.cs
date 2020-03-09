@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Food : MonoBehaviour
 {
-    private Image Pickup;
+    private Image Pickup, PressFtoEat;
     bool inTrigger = false;
     private GameObject Player;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Pickup = GameObject.FindGameObjectWithTag("PickUp").GetComponent<Image>();
+        PressFtoEat = GameObject.FindGameObjectWithTag("PressFtoEat").GetComponent<Image>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,8 +38,9 @@ public class Food : MonoBehaviour
         //Enable FOOD UI
         if (Input.GetKeyDown(KeyCode.F) && inTrigger)
         {
+            Pickup.enabled = false;
+            PressFtoEat.enabled = false;
             Player.GetComponent<PlayerHealth>().increceHealth();
-            Pickup.enabled = false; 
             Destroy(this.gameObject);
         }
         

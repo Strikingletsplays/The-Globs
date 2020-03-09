@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public Canvas Canvas;
     //Ui
     public HealthBar healthbar;
-    public Image Pickup;
+    public Image PressFtoEat;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,7 +97,6 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         NewBaby.enabled = false;
         yield return null;
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -105,7 +104,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.tag == "Food")
         {
             //Enable Ui (To Eat the food, Press [F])
-            Pickup.enabled = true;
+            PressFtoEat.enabled = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -114,7 +113,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.tag == "Food")
         {
             //Disable Ui (To Eat the food, Press [F])
-            Pickup.enabled = false;
+            PressFtoEat.enabled = false;
         }
     }
 }

@@ -9,7 +9,12 @@ public class Ladders : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        anim = other.GetComponent<Animator>();
+        //Get animator
+        if (other.tag == "Player" || other.tag == "BabyGlob")
+        {
+            anim = other.GetComponent<Animator>();
+        }
+
         if (other.tag=="Player" && Input.GetKey(KeyCode.W))
         {
             anim.SetBool("isClimbing", true);

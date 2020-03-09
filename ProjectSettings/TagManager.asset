@@ -10,6 +10,8 @@ TagManager:
   - Hungry
   - Happy
   - PickUp
+  - GameScripts
+  - PressFtoEat
   layers:
   - Default
   - TransparentFX
