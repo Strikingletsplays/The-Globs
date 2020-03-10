@@ -43,6 +43,5 @@ public class Food : MonoBehaviour
             Player.GetComponent<PlayerHealth>().increceHealth();
             Destroy(this.gameObject);
         }
-        
     }
 }

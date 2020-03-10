@@ -31,7 +31,6 @@ public class pickup : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             gameObject.transform.position = PlayersHoldingPossition.position;
             transform.parent = GameObject.Find("Destination").transform;
-
         }
     }
     void OnMouseUp()
