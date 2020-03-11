@@ -35,8 +35,7 @@ public class Ladders : MonoBehaviour
         }
         else
         {
-            anim.SetBool("isClimbing", false);
-            other.GetComponent<Rigidbody2D>().gravityScale = 3;
+            other.GetComponent<Rigidbody2D>().gravityScale = 0;
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
         if (other.tag == "BabyGlob")
