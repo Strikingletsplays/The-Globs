@@ -8,7 +8,7 @@ public class GlobPickupUI : MonoBehaviour
     private GameObject BabyGlob;
     public Image Pickup;
     public List<GameObject> Globs;
-    public int CloseBaby;
+    private int CloseBaby;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,9 +45,11 @@ public class GlobPickupUI : MonoBehaviour
             }
         }
         if (CloseBaby != -1 && Globs[CloseBaby] != null)
+        {
             if (!Globs[CloseBaby].GetComponent<pickup>().isClose)
             {
                 Pickup.enabled = false;
             }
+        }else Pickup.enabled = false;
     }
 }

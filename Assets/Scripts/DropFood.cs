@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DropFood : MonoBehaviour
 {
     private Transform Player;
-    private int food_size;
     public List<GameObject> apples;
     public Image Click2Shake;
     public Animator anim;

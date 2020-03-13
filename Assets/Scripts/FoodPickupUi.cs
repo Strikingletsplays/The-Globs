@@ -42,10 +42,12 @@ public class FoodPickupUi : MonoBehaviour
                 Pickup.enabled = false;
             }
         }
-        if (CloseFood != -1 && Food[CloseFood] != null)
+        if (CloseFood != -1)
+        {
             if (!Food[CloseFood].GetComponent<pickup>().isClose)
             {
                 Pickup.enabled = false;
             }
+        }else Pickup.enabled = false;
     }
 }

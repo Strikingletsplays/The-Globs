@@ -7,7 +7,6 @@ public class FoodEatUI : MonoBehaviour
 {
     private Image PressFtoEat;
     private FoodPickupUi FoodPickupUi;
-    private int CloseFood;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +17,17 @@ public class FoodEatUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i=0;i< FoodPickupUi.Food.Count; i++)
+        for (int i=0;i< FoodPickupUi.Food.Count; i++)
         {
             //when pickable object gets destroid
             if (FoodPickupUi.Food[i] == null)
             {
-                CloseFood = -1;
-                FoodPickupUi.Food.Remove(FoodPickupUi.Food[i]);
                 PressFtoEat.enabled = false;
                 continue;
-            }
-            if (FoodPickupUi.Food[i].GetComponent<pickup>().isHolding)
-            {
-                PressFtoEat.enabled = false;
             }
             //UI Pickup object
             if (FoodPickupUi.Food[i].GetComponent<pickup>().isClose && !FoodPickupUi.Food[i].GetComponent<pickup>().isHolding)
             {
-                CloseFood = i;
                 PressFtoEat.enabled = true;
             }
             else if (FoodPickupUi.Food[i].GetComponent<pickup>().isClose && FoodPickupUi.Food[i].GetComponent<pickup>().isHolding)
@@ -43,10 +35,13 @@ public class FoodEatUI : MonoBehaviour
                 PressFtoEat.enabled = false;
             }
         }
-        if (CloseFood != -1 && FoodPickupUi.Food[CloseFood] != null)
-            if (!FoodPickupUi.Food[CloseFood].GetComponent<pickup>().isClose)
+        //Disable UI if nothing if food is destroyed 
+        if (FoodPickupUi.CloseFood != -1)
+        {
+            if (!FoodPickupUi.Food[FoodPickupUi.CloseFood].GetComponent<pickup>().isClose)
             {
                 PressFtoEat.enabled = false;
             }
+        }else PressFtoEat.enabled = false;
     }
 }
