@@ -33,6 +33,7 @@ public class DropFood : MonoBehaviour
                         {
                             apples[i].GetComponent<pickup>().enabled = true;
                             apples[i].GetComponent<Rigidbody2D>().simulated = true;
+                            apples.Remove(apples[i]);
                             break;
                         }
                 }

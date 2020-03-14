@@ -27,6 +27,7 @@ public class pickup : MonoBehaviour
         {
             isHolding = true;
             GetComponent<Rigidbody2D>().gravityScale = 0;
+            GetComponent<Collider2D>().enabled = false;
             GetComponent<Rigidbody2D>().simulated = false;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             gameObject.transform.position = PlayersHoldingPossition.position;
@@ -37,6 +38,7 @@ public class pickup : MonoBehaviour
     {
         isHolding = false;
         transform.parent = null;
+        GetComponent<Collider2D>().enabled = true;
         GetComponent<Rigidbody2D>().gravityScale = 3;
         GetComponent<Rigidbody2D>().simulated = true;
     }

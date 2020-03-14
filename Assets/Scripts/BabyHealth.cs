@@ -19,6 +19,7 @@ public class BabyHealth : MonoBehaviour
     
     public AudioSource Dead;
     public AudioSource Hurt;
+    public AudioSource HealthUp;
 
     private void Start()
     {
@@ -49,7 +50,8 @@ public class BabyHealth : MonoBehaviour
     }
     public void increceHealth()
     {
-        if(Health <= 3) {
+        HealthUp.Play();
+        if (Health <= 3) {
             Health++;
             HealthBar.SetHealth(Health);
             //increase scale

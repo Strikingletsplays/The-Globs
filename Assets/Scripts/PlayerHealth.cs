@@ -20,6 +20,8 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthbar;
     //Sound
     public AudioSource Hurt;
+    public AudioSource HealthUp;
+    public AudioSource BabyGlobCreate;
     void Start()
     {
         Health = 2;
@@ -71,6 +73,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Health < 4)
         {
+            HealthUp.Play();
             //increase scale when he is facing laft or right
             if (this.gameObject.GetComponent<Transform>().localScale.x > 0)
             {
@@ -87,6 +90,7 @@ public class PlayerHealth : MonoBehaviour
         }else if(Health == 4)
         {
             NewBaby.enabled = true;
+            BabyGlobCreate.Play();
             GameObject NewBbay = Instantiate(baby, SpawnBaby.position, transform.rotation);
             AllBabys.Globs.Add(NewBbay);
             //wait for 2 second
