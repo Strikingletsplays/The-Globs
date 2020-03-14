@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Cinemachine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -22,12 +24,28 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource Hurt;
     public AudioSource HealthUp;
     public AudioSource BabyGlobCreate;
+
+    //Shake
+    public float ShakeDuration = 0.3f;
+    public float ShakeAmplitude = 1.2f;
+
+    private float ShakeElapsedTime = 0f;
+
+    //Cinemachine Shake
+    public CinemachineVirtualCamera VirtualCamera;
+    private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
     void Start()
     {
         Health = 2;
         healthbar.SetMaxHealth(MaxHealth);
         healthbar.SetHealth(Health);
         SpawnBaby = GameObject.FindGameObjectWithTag("Destination").transform;
+
+        //shake
+        if (VirtualCamera != null)
+        {
+            virtualCameraNoise = VirtualCamera.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+        }
     }
 
     // Update is called once per frame
@@ -52,6 +70,17 @@ public class PlayerHealth : MonoBehaviour
         {
             Health = 4;
         }
+        //For shake (timer)
+        if (ShakeElapsedTime > 0)
+        {
+            virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
+            ShakeElapsedTime -= Time.deltaTime;
+        }
+        else
+        {
+            virtualCameraNoise.m_AmplitudeGain = 0f;
+            ShakeElapsedTime = 0f;
+        }
     }
     public void TakeDamage()
     {
@@ -68,6 +97,8 @@ public class PlayerHealth : MonoBehaviour
         Hurt.Play();
         Health -= 1;
         healthbar.SetHealth(Health);
+        //Camera Shake
+        ShakeElapsedTime = ShakeDuration;
     }
     public void increceHealth()
     {

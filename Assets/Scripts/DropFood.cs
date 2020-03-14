@@ -11,6 +11,9 @@ public class DropFood : MonoBehaviour
     public Animator anim;
     bool isTime = true;
     private float distance;
+
+    //Sound
+    public AudioSource Shake;
     private void Start()
     {
         //food_size = foods.Length;
@@ -26,6 +29,7 @@ public class DropFood : MonoBehaviour
                 isTime = false;
                 //shake
                 anim.SetBool("isShaking", true);
+                Shake.Play();
                 for (int i = 0; i < apples.Count; i++)
                 {
                     if (apples[i])
