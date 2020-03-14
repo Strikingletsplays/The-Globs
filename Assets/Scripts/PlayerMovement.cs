@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public PhysicsMaterial2D withFricton;
     public PhysicsMaterial2D noFriction;
 
+    //Sound
+    public AudioSource Jump;
+
     // Update is called once per frame
     void Update()
     {
@@ -37,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         //Jumping
         if (Input.GetButtonDown("Jump"))
             {
+                Jump.Play();
                 Animator.SetBool("Isjumping", true);
                 jump = true;
             }

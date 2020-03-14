@@ -25,7 +25,7 @@ public class Ladders : MonoBehaviour
             anim.SetBool("isClimbing", true);
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climeSpeed);
         }
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && other.tag == "Player")
         {
             anim.SetBool("isClimbing", false);
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);

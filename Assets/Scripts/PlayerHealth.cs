@@ -18,7 +18,8 @@ public class PlayerHealth : MonoBehaviour
     public Canvas Canvas;
     //Ui
     public HealthBar healthbar;
-    // Start is called before the first frame update
+    //Sound
+    public AudioSource Hurt;
     void Start()
     {
         Health = 2;
@@ -62,6 +63,7 @@ public class PlayerHealth : MonoBehaviour
             ScaleChangeSize = new Vector3(0.3f, -0.3f, -0.3f);
             this.transform.localScale += ScaleChangeSize;
         }
+        Hurt.Play();
         Health -= 1;
         healthbar.SetHealth(Health);
     }

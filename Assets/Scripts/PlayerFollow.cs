@@ -19,6 +19,9 @@ public class PlayerFollow : MonoBehaviour
     //Flip canvas
     public Canvas Canvas;
 
+    //Sound
+    public AudioSource Jump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,7 @@ public class PlayerFollow : MonoBehaviour
                 {
                     //jump
                     GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+                    Jump.Play();
                 }
             }
         }

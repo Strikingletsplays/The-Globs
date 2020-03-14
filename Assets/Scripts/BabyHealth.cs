@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BabyHealth : MonoBehaviour
 {
+    public Renderer rend;
     public int Health = 1;
     public int MaxHealth = 4;
     private Vector3 ScaleChangeSize;
@@ -13,6 +14,11 @@ public class BabyHealth : MonoBehaviour
     public HealthBar HealthBar;
     public GameObject Hungry; 
     public GameObject Happy;
+
+    //Sound
+    
+    public AudioSource Dead;
+    public AudioSource Hurt;
 
     private void Start()
     {
@@ -24,12 +30,7 @@ public class BabyHealth : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Health <= 0)
-        {
-            //kill b_Glob
-            Hungry.GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(this.gameObject);
-        }
+
         if(Health >= 4)
         {
             //enable happy UI
@@ -66,6 +67,7 @@ public class BabyHealth : MonoBehaviour
     {
         Health--;
         HealthBar.SetHealth(Health);
+        Hurt.Play();
         //decrese scale
         if (gameObject.GetComponent<Transform>().localScale.x > 0)
          {
@@ -74,6 +76,13 @@ public class BabyHealth : MonoBehaviour
         }else{
             ScaleChangeSize = new Vector3(0.1f, -0.1f, -0.1f);
             transform.localScale += ScaleChangeSize;
+        }
+        if (Health <= 0)
+        {
+            //kill b_Glob
+            rend.enabled = false;
+            Dead.Play();
+            Destroy(gameObject,0.4f);
         }
     }
 }
