@@ -256,6 +256,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1144405174}
+        m_MethodName: OptionsIsUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &55060785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7941,7 +7952,6 @@ GameObject:
   m_Component:
   - component: {fileID: 671816741}
   - component: {fileID: 671816743}
-  - component: {fileID: 671816742}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -7971,19 +7981,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 95.14998}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &671816742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671816740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7768a02f9c34c5e42beeb708e9d45fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: e3ac3c3e9f7e0734496b6c387953d26a, type: 2}
 --- !u!114 &671816743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8034,7 +8031,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 671816742}
+      - m_Target: {fileID: 1144405174}
         m_MethodName: SetLevel
         m_Mode: 0
         m_Arguments:
@@ -8046,7 +8043,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 24100000, guid: e3ac3c3e9f7e0734496b6c387953d26a, type: 2}
-        m_MethodName: UpdateBypass
+        m_MethodName: CloneViewFromCurrent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11056,6 +11053,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1144405174}
+        m_MethodName: OptionsIsDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1090121035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11525,7 +11533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beddb953639e26544acd088d7a0fe1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicVolume: {fileID: 671816743}
+  MusicVolumeTemp: 0
   mixer: {fileID: 24100000, guid: e3ac3c3e9f7e0734496b6c387953d26a, type: 2}
+  Options: 0
   Camera: {fileID: 758447421}
   PauseMenuUI: {fileID: 1571746119}
 --- !u!1001 &1154710237
@@ -13881,7 +13892,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1680736104}
   - component: {fileID: 1680736106}
-  - component: {fileID: 1680736105}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -13911,19 +13921,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 25.3}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1680736105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680736103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7768a02f9c34c5e42beeb708e9d45fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: e3ac3c3e9f7e0734496b6c387953d26a, type: 2}
 --- !u!114 &1680736106
 MonoBehaviour:
   m_ObjectHideFlags: 0

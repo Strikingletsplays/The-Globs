@@ -1,29 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour 
 {
+    public Slider MusicVolume;
+    public float MusicVolumeTemp;
+
     public AudioMixer mixer;
     public static bool GameIsPaused = false;
+    public bool Options = false;
     public GameObject Camera;
     public GameObject PauseMenuUI;
+
+    private void Awake()
+    {
+        if (mixer.GetFloat("MusicVol", out MusicVolumeTemp))
+        {
+            //Need to fix :/
+            //MusicVolume.value = Mathf.Log10(MusicVolumeTemp);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (GameIsPaused && !Options)
             {
                 Resume();
             }
-            else
+            else if (!Options)
             {
                 Pause();
             }
         }
+    }
+    public void OptionsIsUp()
+    {
+        Options = true;
+    }
+    public void OptionsIsDown()
+    {
+        Options = false;
     }
     public void Resume()
     {

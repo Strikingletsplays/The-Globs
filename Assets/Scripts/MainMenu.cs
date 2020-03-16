@@ -1,12 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    public Slider MusicVolume;
+    private float MusicVolumeTemp;
+    
+    public GameObject OptionsMenu;
     public AudioMixer mixer;
+
+    private void Awake()
+    {
+
+        if (mixer.GetFloat("MusicVol", out MusicVolumeTemp))
+        {
+            //Need to fix :/
+            //MusicVolume.value = Mathf.Log10(MusicVolumeTemp);
+        }
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
