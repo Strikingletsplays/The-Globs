@@ -12,6 +12,8 @@ TagManager:
   - PickUp
   - GameScripts
   - PressFtoEat
+  - Background
+  - VolumeSlider
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,7 @@ public class pickup : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(transform.position, PlayersHoldingPossition.position);
-        isClose = (distance < 1);
+        isClose = distance < .5f;
     }
 
     void OnMouseDown()

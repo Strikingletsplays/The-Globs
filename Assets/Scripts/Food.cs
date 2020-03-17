@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Food : MonoBehaviour
 {
     private Image Pickup, PressFtoEat;
-    bool inTrigger = false;
+    public bool inTrigger = false;
     private GameObject Player;
     void Start()
     {
@@ -35,7 +35,6 @@ public class Food : MonoBehaviour
     }
     private void Update()
     {
-        //Enable FOOD UI
         if (Input.GetKeyDown(KeyCode.F) && inTrigger)
         {
             Pickup.enabled = false;
