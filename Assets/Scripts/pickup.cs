@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class pickup : MonoBehaviour
 {
@@ -17,7 +14,7 @@ public class pickup : MonoBehaviour
     }
     void Update()
     {
-        distance = Vector3.Distance(transform.position, PlayersHoldingPossition.position);
+        distance = Vector2.Distance(transform.position, PlayersHoldingPossition.position);
         isClose = distance < .5f;
     }
 
