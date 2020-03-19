@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class BabyHealth : MonoBehaviour
 {
-    public Renderer rend;
     public int Health = 1;
-    public int MaxHealth = 4;
+    public int MaxHealth = 3;
     private Vector3 ScaleChangeSize;
 
     //Ui Elements
@@ -16,7 +15,6 @@ public class BabyHealth : MonoBehaviour
     public GameObject Happy;
 
     //Sound
-    
     public AudioSource Dead;
     public AudioSource Hurt;
     public AudioSource HealthUp;
@@ -32,13 +30,13 @@ public class BabyHealth : MonoBehaviour
     void FixedUpdate()
     {
 
-        if(Health >= 4)
+        if(Health >= MaxHealth)
         {
             //enable happy UI
             Happy.GetComponent<SpriteRenderer>().enabled = true;
             HealthBar.enabled = false;
             Hungry.GetComponent<SpriteRenderer>().enabled = false;
-            Health = 4;
+            Health = MaxHealth;
         }
         else
         {
@@ -50,18 +48,22 @@ public class BabyHealth : MonoBehaviour
     }
     public void increceHealth()
     {
+        //Play sound
         HealthUp.Play();
-        if (Health <= 3) {
+        //Check if baby health is bellow 3
+        if (Health < 3) 
+        {
             Health++;
             HealthBar.SetHealth(Health);
-            //increase scale
-            if (gameObject.GetComponent<Transform>().localScale.x > 0) {
-                ScaleChangeSize = new Vector3(0.1f, 0.1f, 0.1f);
-                transform.localScale += ScaleChangeSize;
+            //Check if baby is facing left or right to scale properly
+            if (transform.localScale.x > 0)
+            {
+                //increase scale
+                transform.localScale += new Vector3(0.1f, 0.1f, 0);
             }
-            else {
-                ScaleChangeSize = new Vector3(-0.1f, 0.1f, 0.1f);
-                transform.localScale += ScaleChangeSize;
+            else
+            {
+                transform.localScale += new Vector3(-0.1f, 0.1f, 0);
             }
         }
     }
@@ -69,21 +71,30 @@ public class BabyHealth : MonoBehaviour
     {
         Health--;
         HealthBar.SetHealth(Health);
+        //Play sound
         Hurt.Play();
         //decrese scale
-        if (gameObject.GetComponent<Transform>().localScale.x > 0)
-         {
-            ScaleChangeSize = new Vector3(-0.1f, -0.1f, -0.1f);
-            transform.localScale += ScaleChangeSize;
-        }else{
-            ScaleChangeSize = new Vector3(0.1f, -0.1f, -0.1f);
-            transform.localScale += ScaleChangeSize;
-        }
-        if (Health <= 0)
+        if (Health > 0)
         {
-            //kill b_Glob
-            rend.enabled = false;
+            //Check if baby is facing left or right to scale properly
+            if (transform.localScale.x > 0)
+            {
+                //increase scale
+                transform.localScale += new Vector3(-0.1f, -0.1f, 0);
+            }
+            else
+            {
+                transform.localScale += new Vector3(0.1f, -0.1f, 0);
+            }
+        }
+        else if (Health <= 0)
+        {
+            //kill babyGlob
             Dead.Play();
+            HealthBar.enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            Happy.GetComponent<SpriteRenderer>().enabled = false;
+            Hungry.GetComponent<SpriteRenderer>().enabled = false;
             Destroy(gameObject,0.4f);
         }
     }

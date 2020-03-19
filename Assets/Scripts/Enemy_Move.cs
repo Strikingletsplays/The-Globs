@@ -6,11 +6,12 @@ public class Enemy_Move : MonoBehaviour
 {
     private Transform PlayerPos;
     public float Speed = 2;
-    public float MinDistance = 5;
+    public float MinDistance = 6;
 
     // Update is called once per frame
     void Update()
     {
+        //Find and chase player
         PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
         if (Vector2.Distance(this.transform.position, PlayerPos.position) < MinDistance)
         {
@@ -20,7 +21,6 @@ public class Enemy_Move : MonoBehaviour
         else
         {
             GetComponentInChildren<Animator>().SetBool("isMoving", false);
-            
         }
 
         //if Atacking
@@ -30,6 +30,7 @@ public class Enemy_Move : MonoBehaviour
         }
         else { GetComponentInChildren<Animator>().SetBool("isAtacking", false); }
 
+        //Rotating Enemy to face player
         if (this.transform.position.x - PlayerPos.position.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);

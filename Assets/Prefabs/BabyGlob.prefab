@@ -171,7 +171,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6d3064134b08db44cad52d6505981ffe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5917,7 +5917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 1252985064190651505}
   Health: 1
-  MaxHealth: 4
+  MaxHealth: 3
   HealthBar: {fileID: 1252985063964139485}
   Hungry: {fileID: 1252985062443056701}
   Happy: {fileID: 1252985064203175584}
@@ -6065,7 +6065,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: def6a772ca181174bbf30e2cd350462d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 2.41
+  m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0

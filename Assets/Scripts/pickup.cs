@@ -3,19 +3,18 @@
 public class pickup : MonoBehaviour
 {
     private Transform PlayersHoldingPossition;
-    public bool isHolding;
+    public bool isHolding = false;
     public bool isClose;
     private float distance;
 
-    void Awake()
+    void Start()
     {
-        isHolding = false;
         PlayersHoldingPossition = GameObject.FindGameObjectWithTag("Destination").transform;
     }
     void Update()
     {
         distance = Vector2.Distance(transform.position, PlayersHoldingPossition.position);
-        isClose = distance < .5f;
+        isClose = distance < 1f;
     }
 
     void OnMouseDown()
@@ -24,9 +23,8 @@ public class pickup : MonoBehaviour
         {
             isHolding = true;
             GetComponent<Rigidbody2D>().gravityScale = 0;
-            GetComponent<Collider2D>().enabled = false;
             GetComponent<Rigidbody2D>().simulated = false;
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             gameObject.transform.position = PlayersHoldingPossition.position;
             transform.parent = GameObject.Find("Destination").transform;
         }
@@ -35,9 +33,7 @@ public class pickup : MonoBehaviour
     {
         isHolding = false;
         transform.parent = null;
-        GetComponent<Collider2D>().enabled = true;
         GetComponent<Rigidbody2D>().gravityScale = 3;
         GetComponent<Rigidbody2D>().simulated = true;
     }
-
 }

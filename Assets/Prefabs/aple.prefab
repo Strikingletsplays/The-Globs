@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2873169324663476096}
   - component: {fileID: 1160213589052560733}
   - component: {fileID: 5901658132664788810}
+  - component: {fileID: 8524193027400356775}
   m_Layer: 12
   m_Name: aple
   m_TagString: Food
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1f219fd1ee2c64f86f3767d1536868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inTrigger: 0
 --- !u!58 &1160213589052560733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +167,15 @@ CircleCollider2D:
   m_Offset: {x: -0.09846564, y: 1.5206574}
   serializedVersion: 2
   m_Radius: 3.920584
+--- !u!114 &8524193027400356775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873169324663476106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d844b95919ddd3145996351e984013ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
