@@ -61,7 +61,7 @@ public class PlayerFollow : MonoBehaviour
         //flip Baby Glob to players direction 
         if (Player.position.x > transform.position.x) //if player is on the right
         {
-            if (transform.localScale.x < 0) //if Baby Glob is facing right
+            if (transform.localScale.x < 0) //if Baby Glob is flipet
             {
                 //Debug.Log("When scale Fliped");
                 transform.eulerAngles = new Vector3(0, 180, 0); //facing Right

@@ -1953,7 +1953,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.42
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -7.986633, y: -2.4215982}
   - {x: -7.569952, y: -0.8759595}
@@ -8283,7 +8283,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.41
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -36.66666, y: 1.8586963}
   - {x: -36.575153, y: 3.375301}
@@ -9050,7 +9050,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.55
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -12.86847, y: -4.829717}
   - {x: -12.029327, y: 7.418387}
@@ -9819,7 +9819,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.41
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -70.68933, y: -0.76217145}
   - {x: -66.63122, y: 10.135353}
@@ -12548,16 +12548,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 3.0125542, y: -2.2933807, z: 0}
-      leftTangent: {x: -0.6017566, y: -0.19352216, z: -0}
-      rightTangent: {x: 0.62890124, y: 0.20225176, z: 0}
-      mode: 1
-      height: 1
-      bevelCutoff: 0
-      bevelSize: 0
-      spriteIndex: 0
-      corner: 1
-    - position: {x: 5.4024315, y: -2.0512657, z: 0}
+    - position: {x: 3.4229546, y: -2.6605825, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -12566,9 +12557,18 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 3.2334328, y: 3.0077686, z: 0}
-      leftTangent: {x: -0.18136597, y: -1.8938475, z: 0}
-      rightTangent: {x: 0.04460907, y: 0.46875477, z: 0}
+    - position: {x: 4.0200157, y: -1.9864655, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+    - position: {x: 3.3630257, y: 3.0509682, z: 0}
+      leftTangent: {x: -0.3109665, y: -1.4834442, z: 0}
+      rightTangent: {x: 0.09660339, y: 0.4608488, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -12763,8 +12763,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 5.2948728, y: -0.92435265, z: -0.00505}
-    m_Extent: {x: 9.021542, y: 8.63096, z: 0.00505}
+    m_Center: {x: 5.2948728, y: -0.92435265, z: -0.005055}
+    m_Extent: {x: 9.021542, y: 8.63096, z: 0.005055}
 --- !u!68 &1013542324
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -12779,28 +12779,24 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.48
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -2.6566393, y: -8.143543}
   - {x: -3.1585848, y: -3.6748521}
-  - {x: 1.3325629, y: -3.173201}
-  - {x: 2.0164833, y: -2.7658002}
-  - {x: 2.6062877, y: -2.4581485}
-  - {x: 3.0121703, y: -2.2921598}
-  - {x: 3.3174014, y: -2.219592}
-  - {x: 4.1253667, y: -2.1195083}
-  - {x: 5.40139, y: -2.052027}
-  - {x: 4.9925227, y: -1.4608657}
-  - {x: 4.5856056, y: -0.81657916}
-  - {x: 4.361903, y: -0.4348626}
-  - {x: 3.9174075, y: 0.40828732}
-  - {x: 3.713972, y: 0.8539511}
-  - {x: 3.5090437, y: 1.383604}
-  - {x: 3.3881228, y: 1.754041}
-  - {x: 3.283071, y: 2.1927068}
-  - {x: 3.22865, y: 2.6602032}
-  - {x: 3.2546132, y: 3.2588987}
-  - {x: 3.4183857, y: 5.289782}
+  - {x: 1.3329425, y: -3.1730392}
+  - {x: 3.421989, y: -2.659727}
+  - {x: 4.0187693, y: -1.9867991}
+  - {x: 3.8548713, y: -1.3352375}
+  - {x: 3.6810622, y: -0.5588119}
+  - {x: 3.5336163, y: 0.19278248}
+  - {x: 3.3938699, y: 1.0854931}
+  - {x: 3.3431978, y: 1.5290322}
+  - {x: 3.3106532, y: 1.9573672}
+  - {x: 3.3002324, y: 2.3605044}
+  - {x: 3.3159342, y: 2.728457}
+  - {x: 3.3935301, y: 3.2976239}
+  - {x: 3.4235032, y: 4.033034}
+  - {x: 3.3978174, y: 6.415257}
   - {x: 3.385609, y: 7.0838447}
   - {x: 8.577488, y: 6.9613686}
   - {x: 13.709751, y: 6.958011}
