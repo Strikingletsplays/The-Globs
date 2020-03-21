@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //flip canvas
+        //flip canvas (for new baby)
         if (transform.localScale.x < 0)
         {
             Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
