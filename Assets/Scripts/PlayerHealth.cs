@@ -9,14 +9,13 @@ public class PlayerHealth : MonoBehaviour
     public int MaxHealth = 4;
     public int Health;
     private Vector3 ScaleChangeSize;
+    //Spawn Baby
     public GameObject baby;
     public Image NewBaby;
-    //Spawn Baby
-    private Transform SpawnBaby; //Position
-    public GlobPickupUI AllBabys; // Add to list of globs
-    //Flip canvas
+    private Transform SpawnBaby; //Position to spawn
+    public GlobPickupUI AllBabys; // Ui to pickup glob
+    //UI --- Flip canvas for "PressFtoEat" && (oops..) && HealthBar
     public Canvas Canvas;
-    //Ui
     public HealthBar healthbar;
     //Sound
     public AudioSource Hurt;
@@ -26,7 +25,6 @@ public class PlayerHealth : MonoBehaviour
     //Shake
     public float ShakeDuration = 0.3f;
     public float ShakeAmplitude = 1.2f;
-
     private float ShakeElapsedTime = 0f;
 
     //Cinemachine Shake
@@ -50,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         //flip canvas (for new baby)
-        if (transform.localScale.x < 0)
+        if (transform.rotation.y < 0)
         {
             Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180, transform.eulerAngles.z);
         }

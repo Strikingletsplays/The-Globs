@@ -19,7 +19,7 @@ public class WaterGun : MonoBehaviour
             StartCoroutine(DisableTrigger(2f));
             isHoldingGun = false;
         }
-        if (isHoldingGun && Input.GetKeyDown("fire1"))
+        if (isHoldingGun && Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
@@ -57,8 +57,7 @@ public class WaterGun : MonoBehaviour
         //set parent to null
         gun.transform.parent = null;
         //make the gun go under players possition
-        gun.transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
-        gun.transform.localScale = new Vector3(0.1716499f, 0.1716499f, 0.1716499f);
+        gun.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
         gun.transform.rotation = Quaternion.Euler(33.223f, 29.443f, -27.444f);
         //WaitForSeconds for seconds
         yield return new WaitForSeconds(time);

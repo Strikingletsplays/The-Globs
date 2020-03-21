@@ -19,8 +19,8 @@ public class Food : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            UIPickUpFood.enabled = true;
             UIPressFtoEat.enabled = true;
+            UIPickUpFood.enabled = true;
             if (Input.GetKey(KeyCode.F))
             {
                 PlayerHealth.increceHealth();
