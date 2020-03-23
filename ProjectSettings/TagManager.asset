@@ -14,6 +14,7 @@ TagManager:
   - PressFtoEat
   - Background
   - VolumeSlider
+  - Boss
   layers:
   - Default
   - TransparentFX

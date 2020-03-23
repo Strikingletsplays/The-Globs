@@ -15,8 +15,9 @@ public class Enemy_Move : MonoBehaviour
         PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
         if (Vector2.Distance(this.transform.position, PlayerPos.position) < MinDistance)
         {
-            GetComponentInChildren<Animator>().SetBool("isMoving", true);
-            transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position,  Speed * Time.deltaTime);
+            //Play starting animation
+            GetComponent<Animator>().SetTrigger("Start");
+            StartCoroutine(start()); //Reset start and make enemy follow player.
         }
         else
         {
@@ -39,5 +40,13 @@ public class Enemy_Move : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
+    }
+    IEnumerator start()
+    {
+        yield return new WaitForSeconds(1);
+        GetComponentInChildren<Animator>().SetBool("isMoving", true);
+        GetComponent<Animator>().ResetTrigger("Start");
+        transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position, Speed * Time.deltaTime);
+        yield return null;
     }
 }
