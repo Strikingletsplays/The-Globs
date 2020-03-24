@@ -36,9 +36,12 @@ public class WaterGun : MonoBehaviour
             gun = collision.gameObject;
             //set triger to false
             collision.GetComponent<PolygonCollider2D>().enabled = false;
+            //fix guns (position-rotation) and position to Destinations
+            collision.transform.position += new Vector3(0f, 0.1f, 0f);
+            collision.transform.position = GameObject.Find("Destination").transform.position;
             //make parent
             collision.transform.parent = GameObject.Find("Destination").transform;
-            collision.transform.position += new Vector3(0f, 0.1f, 0f);
+            
             //fix rotation of gun
             if (transform.position.x > gun.transform.position.x)
             {

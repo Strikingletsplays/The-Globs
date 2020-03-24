@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 527e12c20aef40d4b82073c322b0d621,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2018,8 +2018,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 26.84977, y: -3.048048, z: -0.005035}
-    m_Extent: {x: 35.477417, y: 13.098707, z: 0.005035}
+    m_Center: {x: 26.84977, y: -3.048048, z: -0.00060004997}
+    m_Extent: {x: 35.477417, y: 13.098707, z: 0.00060004997}
 --- !u!68 &297387995
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -8603,8 +8603,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -18.65478, y: 3.6959116, z: -0.00451}
-    m_Extent: {x: 18.65478, y: 3.6959116, z: 0.00451}
+    m_Center: {x: -18.65478, y: 3.6959116, z: -0.00015005}
+    m_Extent: {x: 18.65478, y: 3.6959116, z: 0.00015005}
 --- !u!1 &613469612
 GameObject:
   m_ObjectHideFlags: 0
@@ -9783,8 +9783,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -15.081017, y: -1.5860977, z: -0.005055}
-    m_Extent: {x: 55.952484, y: 11.869262, z: 0.005055}
+    m_Center: {x: -15.081017, y: -1.5860977, z: -0.00075005}
+    m_Extent: {x: 55.952484, y: 11.869262, z: 0.00075005}
 --- !u!4 &721201704
 Transform:
   m_ObjectHideFlags: 0
@@ -10968,8 +10968,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 0.91985345, y: 0.26858398, z: -0.005}
-    m_Extent: {x: 3.9303718, y: 0.6446025, z: 0.005}
+    m_Center: {x: 0.91985345, y: 0.26858398, z: -0.00005}
+    m_Extent: {x: 3.9303718, y: 0.6446025, z: 0.00005}
 --- !u!251 &815212967
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11741,8 +11741,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 15.35315, y: 4.374679, z: -0.005}
-    m_Extent: {x: 15.35315, y: 4.374679, z: 0.005}
+    m_Center: {x: 15.35315, y: 4.374679, z: -0.00005}
+    m_Extent: {x: 15.35315, y: 4.374679, z: 0.00005}
 --- !u!251 &929780508
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -12173,8 +12173,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 9.286614, y: 2.745359, z: -0.005}
-    m_Extent: {x: 9.286614, y: 2.745359, z: 0.005}
+    m_Center: {x: 9.286614, y: 2.745359, z: -0.00005}
+    m_Extent: {x: 9.286614, y: 2.745359, z: 0.00005}
 --- !u!1 &1006346646
 GameObject:
   m_ObjectHideFlags: 0
@@ -12426,8 +12426,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.74415016, y: -0.9120767, z: -0.005}
-    m_Extent: {x: 4.9124174, y: 1.7144272, z: 0.005}
+    m_Center: {x: 0.74415016, y: -0.9120767, z: -0.00005}
+    m_Extent: {x: 4.9124174, y: 1.7144272, z: 0.00005}
 --- !u!251 &1009858186
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -12764,8 +12764,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 7.54376, y: -1.9572477, z: -0.005035}
-    m_Extent: {x: 11.104078, y: 8.18494, z: 0.005035}
+    m_Center: {x: 7.54376, y: -1.9572477, z: -0.0007501}
+    m_Extent: {x: 11.104078, y: 8.18494, z: 0.0007501}
 --- !u!68 &1013542324
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -13729,8 +13729,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 15.35315, y: 4.374679, z: -0.005}
-    m_Extent: {x: 15.35315, y: 4.374679, z: 0.005}
+    m_Center: {x: 15.35315, y: 4.374679, z: -0.00005}
+    m_Extent: {x: 15.35315, y: 4.374679, z: 0.00005}
 --- !u!251 &1108856975
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -14979,8 +14979,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -5.0681057, y: 8.298094, z: -0.00509}
-    m_Extent: {x: 23.013016, y: 19.91817, z: 0.00509}
+    m_Center: {x: -5.0681057, y: 8.298094, z: -0.0011000499}
+    m_Extent: {x: 23.013016, y: 19.91817, z: 0.0011000499}
 --- !u!68 &1230564782
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -16532,8 +16532,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -4.895783, y: 0.21752062, z: -0.005}
-    m_Extent: {x: 4.895783, y: 0.64246035, z: 0.005}
+    m_Center: {x: -4.895783, y: 0.21752062, z: -0.00005}
+    m_Extent: {x: 4.895783, y: 0.64246035, z: 0.00005}
 --- !u!1 &1474077125
 GameObject:
   m_ObjectHideFlags: 0
@@ -18398,8 +18398,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 15.35315, y: 4.374679, z: -0.005}
-    m_Extent: {x: 15.35315, y: 4.374679, z: 0.005}
+    m_Center: {x: 15.35315, y: 4.374679, z: -0.00005}
+    m_Extent: {x: 15.35315, y: 4.374679, z: 0.00005}
 --- !u!251 &1697493949
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -19003,8 +19003,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 13.847609, y: 4.1730647, z: -0.005}
-    m_Extent: {x: 13.847609, y: 4.1730647, z: 0.005}
+    m_Center: {x: 13.847609, y: 4.1730647, z: -0.00005}
+    m_Extent: {x: 13.847609, y: 4.1730647, z: 0.00005}
 --- !u!251 &1746825285
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -19268,8 +19268,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -5.7529655, y: 0.007446766, z: -0.005}
-    m_Extent: {x: 5.7529655, y: 1.0731807, z: 0.005}
+    m_Center: {x: -5.7529655, y: 0.007446766, z: -0.00005}
+    m_Extent: {x: 5.7529655, y: 1.0731807, z: 0.00005}
 --- !u!4 &1821618782
 Transform:
   m_ObjectHideFlags: 0
@@ -25824,8 +25824,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -6.3486824, y: 9.024415, z: -0.0045249998}
-    m_Extent: {x: 25.674515, y: 16.99219, z: 0.0045249998}
+    m_Center: {x: -6.3486824, y: 9.024415, z: -0.00030005}
+    m_Extent: {x: 25.674515, y: 16.99219, z: 0.00030005}
 --- !u!4 &2058596662
 Transform:
   m_ObjectHideFlags: 0
@@ -26186,8 +26186,8 @@ SpriteShapeRenderer:
   m_Sprites:
   - {fileID: 21300000, guid: 6941b805b3ca07749aa83c7291483c60, type: 3}
   m_LocalAABB:
-    m_Center: {x: 16.682978, y: 4.377964, z: -0.005}
-    m_Extent: {x: 16.682978, y: 4.377964, z: 0.005}
+    m_Center: {x: 16.682978, y: 4.377964, z: -0.00005}
+    m_Extent: {x: 16.682978, y: 4.377964, z: 0.00005}
 --- !u!251 &2088498100
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -26524,8 +26524,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 11.009989, y: 3.972371, z: -0.00503}
-    m_Extent: {x: 27.697992, y: 14.6271515, z: 0.00503}
+    m_Center: {x: 11.009989, y: 3.972371, z: -0.00045005}
+    m_Extent: {x: 27.697992, y: 14.6271515, z: 0.00045005}
 --- !u!68 &2093901744
 EdgeCollider2D:
   m_ObjectHideFlags: 0

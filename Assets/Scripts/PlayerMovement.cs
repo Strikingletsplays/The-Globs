@@ -36,10 +36,13 @@ public class PlayerMovement : MonoBehaviour
         //Jumping
         if (Input.GetButtonDown("Jump"))
             {
+            if (controller.m_Grounded) //Player is Grounded
+            {
                 //Play sound
                 Jump.Play();
                 Animator.SetBool("Isjumping", true);
                 jump = true;
+            }    
             }
         //Crouching
         if (Input.GetButtonDown("Crouch"))
