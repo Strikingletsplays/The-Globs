@@ -45,7 +45,7 @@ public class PlayerFollow : MonoBehaviour
         {
             if (!(Vector2.Distance(transform.position, Player.position) < stopRange))
             {
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.fixedDeltaTime);
                 if ((Player.position.y - transform.position.y) > 2.2 && m_Grounded)
                 {
                     //jump

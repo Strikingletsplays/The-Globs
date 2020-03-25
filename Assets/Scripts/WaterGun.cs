@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaterGun : MonoBehaviour
 {
     private CharacterController2D controller;
-    private bool isHoldingGun = false;
+    public bool isHoldingGun = false;
     private GameObject gun;
     private void Start()
     {
