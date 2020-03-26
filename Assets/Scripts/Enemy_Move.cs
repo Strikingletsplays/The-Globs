@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Move : MonoBehaviour
 {
     private Transform PlayerPos;
-    public float Speed = 2;
+    public float Speed = 3;
     public float MinDistance = 6;
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class Enemy_Move : MonoBehaviour
         yield return new WaitForSeconds(1);
         GetComponentInChildren<Animator>().SetBool("isMoving", true);
         GetComponent<Animator>().ResetTrigger("Start");
-        transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position, Speed * Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position, Speed * Time.deltaTime);
         yield return null;
     }
 }

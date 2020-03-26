@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class SpawnWater : MonoBehaviour
 {
-    public CharacterController2D controller;
     public GameObject FirePoint;
     public GameObject Water;
-    GameObject ParticleSystem;
+    private GameObject ParticleSystem;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ParticleSystem = Instantiate(Water, FirePoint.transform.position, Quaternion.Euler(0, 90, 0));
-            ParticleSystem.GetComponent<ParticleSystem>().Play();
-            ParticleSystem.transform.position = FirePoint.transform.position;
+            ParticleSystem = Instantiate(Water, FirePoint.transform.position, Quaternion.Euler(0,90f,0));
             ParticleSystem.gameObject.SetActive(true);
+            ParticleSystem.GetComponent<ParticleSystem>().Play();
         }
         if (ParticleSystem) //if water is spawned
         {
             ParticleSystem.transform.position = FirePoint.transform.position;
+            ParticleSystem.transform.rotation = Quaternion.Inverse(ParticleSystem.transform.rotation);
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             ParticleSystem.GetComponent<ParticleSystem>().Stop();
+            Destroy(ParticleSystem, 3);
         }
     }
 }
