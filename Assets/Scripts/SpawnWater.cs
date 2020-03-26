@@ -20,12 +20,16 @@ public class SpawnWater : MonoBehaviour
         if (ParticleSystem) //if water is spawned
         {
             ParticleSystem.transform.position = FirePoint.transform.position;
-            ParticleSystem.transform.rotation = Quaternion.Inverse(ParticleSystem.transform.rotation);
+            ParticleSystem.transform.rotation = Quaternion.Inverse(ParticleSystem.transform.rotation); //for shooting left (need to fix)
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             ParticleSystem.GetComponent<ParticleSystem>().Stop();
-            Destroy(ParticleSystem, 3);
+            Destroy(ParticleSystem, 4);
         }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //enable ui (Press E to pickup Water Gun)
     }
 }

@@ -43,9 +43,9 @@ public class Enemy_Move : MonoBehaviour
     }
     IEnumerator start()
     {
-        yield return new WaitForSeconds(1);
-        GetComponentInChildren<Animator>().SetBool("isMoving", true);
+        yield return new WaitForSeconds(0.7f);
         GetComponent<Animator>().ResetTrigger("Start");
+        GetComponentInChildren<Animator>().SetBool("isMoving", true);
         transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position, Speed * Time.deltaTime);
         yield return null;
     }

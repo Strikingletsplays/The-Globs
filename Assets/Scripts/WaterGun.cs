@@ -19,15 +19,8 @@ public class WaterGun : MonoBehaviour
             StartCoroutine(DisableTrigger(2f));
             isHoldingGun = false;
         }
-        if (isHoldingGun && Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
     }
-    void Shoot()
-    {
 
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "water-gun")
@@ -41,7 +34,7 @@ public class WaterGun : MonoBehaviour
             collision.transform.position = GameObject.Find("Destination").transform.position;
             //make parent
             collision.transform.parent = GameObject.Find("Destination").transform;
-            
+
             //fix rotation of gun
             if (transform.position.x > gun.transform.position.x)
             {
