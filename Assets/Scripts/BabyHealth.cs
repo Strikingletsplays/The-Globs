@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class BabyHealth : MonoBehaviour
 {
     public int Health = 1;
     public int MaxHealth = 3;
-    private Vector3 ScaleChangeSize;
 
     //Ui Elements
     public HealthBar HealthBar;
@@ -18,6 +14,9 @@ public class BabyHealth : MonoBehaviour
     public AudioSource Dead;
     public AudioSource Hurt;
     public AudioSource HealthUp;
+
+    //Light
+    public Light bgLight;
 
     private void Start()
     {

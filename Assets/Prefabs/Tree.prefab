@@ -350,7 +350,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -368,9 +368,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 480183421
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: -2105826941
+  m_SortingLayer: 2
+  m_SortingOrder: -2
   m_Sprite: {fileID: 2476666327819713815, guid: e2385f88f1e89db42bb5fc8dc16253cf,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -539,6 +539,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: aple (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2873169324663476108, guid: 2ff3d7e493876504a96e8e9433192791,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2873169324663476109, guid: 2ff3d7e493876504a96e8e9433192791,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -619,6 +624,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: aple (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873169324663476108, guid: 2ff3d7e493876504a96e8e9433192791,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2873169324663476109, guid: 2ff3d7e493876504a96e8e9433192791,
         type: 3}
@@ -701,6 +711,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: aple
       objectReference: {fileID: 0}
+    - target: {fileID: 2873169324663476108, guid: 2ff3d7e493876504a96e8e9433192791,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2873169324663476109, guid: 2ff3d7e493876504a96e8e9433192791,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -781,6 +796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: aple (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873169324663476108, guid: 2ff3d7e493876504a96e8e9433192791,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2873169324663476109, guid: 2ff3d7e493876504a96e8e9433192791,
         type: 3}
