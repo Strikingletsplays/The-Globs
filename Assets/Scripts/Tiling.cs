@@ -43,7 +43,7 @@ public class Tiling : MonoBehaviour {
             float edgeVisablePositionLeft = (myTransform.position.x - spriteWidth / 2) + camHoizontalExtend;
 
             // checking if we can see the edge of the element and then calling makeNewBuddy if we can
-            if (cam.transform.position.x +10>= edgeVisablePositionRight - offsetX && hasARightBuddy == false)
+            if (cam.transform.position.x +50>= edgeVisablePositionRight - offsetX && hasARightBuddy == false)
             {
                 MakeNewBuddy(1);
                 hasARightBuddy = true;
