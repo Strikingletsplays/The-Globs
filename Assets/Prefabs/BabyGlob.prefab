@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 957406828}
   - component: {fileID: 9000482874448540081}
   m_Layer: 13
-  m_Name: Parametric Light 2D
+  m_Name: Baby Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.7688679, g: 1, b: 0.83203316, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 5bc0e68f000000007d049f1c83a17b82
   m_LightCookieSprite: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.1
+  m_PointLightInnerRadius: 0.01
   m_PointLightOuterRadius: 3
   m_PointLightDistance: 3
   m_PointLightQuality: 1
@@ -5842,6 +5842,7 @@ GameObject:
   - component: {fileID: 1252985064190651517}
   - component: {fileID: 1252985064190651514}
   - component: {fileID: 1252985064190651507}
+  - component: {fileID: 850561193}
   m_Layer: 13
   m_Name: BabyGlob
   m_TagString: BabyGlob
@@ -5960,7 +5961,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1252985063171177170}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 8759
   Canvas: {fileID: 1252985062373628403}
   Jump: {fileID: 5692292174116457216}
 --- !u!114 &1252985064190651516
@@ -6016,7 +6017,6 @@ MonoBehaviour:
   Dead: {fileID: 20713164}
   Hurt: {fileID: 1338263470}
   HealthUp: {fileID: 2015112629}
-  bgLight: {fileID: 0}
 --- !u!70 &1252985064190651507
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6033,6 +6033,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0000016829548, y: -1.8947807e-13}
   m_Size: {x: 0.70137477, y: 0.4600013}
   m_Direction: 1
+--- !u!114 &850561193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252985064190651506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e48bd45ad61414fbc6a14c1539d26f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 9000482874448540081}
 --- !u!1 &1252985064203175584
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ TagManager:
   - Background
   - VolumeSlider
   - Boss
+  - CaveBackground
   layers:
   - Default
   - TransparentFX

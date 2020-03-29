@@ -15,9 +15,6 @@ public class BabyHealth : MonoBehaviour
     public AudioSource Hurt;
     public AudioSource HealthUp;
 
-    //Light
-    public Light bgLight;
-
     private void Start()
     {
         HealthBar.SetMaxHealth(MaxHealth);
