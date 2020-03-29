@@ -15,6 +15,10 @@ public class pickup : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, PlayersHoldingPossition.position);
         isClose = distance < 1f;
+/*        if (isHolding)
+        {
+            gameObject.transform.position = PlayersHoldingPossition.position;
+        }*/
     }
 
     void OnMouseDown()
@@ -24,7 +28,7 @@ public class pickup : MonoBehaviour
             isHolding = true;
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().simulated = false;
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             gameObject.transform.position = PlayersHoldingPossition.position;
             transform.parent = GameObject.Find("Destination").transform;
         }

@@ -8,14 +8,14 @@ public class BabyLightScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "CaveBackground")
+        if(collision.name == "CaveBackground" || collision.name == "LightColider")
         {
             animator.SetTrigger("InCave");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.name == "CaveBackground")
+        if (collision.name == "CaveBackground" || collision.name == "LightColider")
         {
             animator.ResetTrigger("InCave");
             animator.Play("Baby_Outside");

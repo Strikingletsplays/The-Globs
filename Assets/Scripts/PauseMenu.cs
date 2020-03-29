@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour 
 {
-    public Slider MusicVolume;
-    public float MusicVolumeTemp;
+    public Slider MainVolume;
+    public float MainVolumeTemp;
 
     public AudioMixer mixer;
     public static bool GameIsPaused = false;
@@ -16,13 +16,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (mixer.GetFloat("MusicVol", out MusicVolumeTemp))
+        if (mixer.GetFloat("MusicVol", out MainVolumeTemp))
         {
             //Need to fix :/
-            //MusicVolume.value = Mathf.Log10(MusicVolumeTemp);
+            //MainVolume.value = Mathf.Log10(MainVolumeTemp);
         }
     }
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
