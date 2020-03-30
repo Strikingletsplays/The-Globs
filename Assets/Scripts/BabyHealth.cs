@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine;
 
 public class BabyHealth : MonoBehaviour
 {
@@ -15,8 +16,12 @@ public class BabyHealth : MonoBehaviour
     public AudioSource Hurt;
     public AudioSource HealthUp;
 
+    //Glow anim
+    public Light2D Glow;
+
     private void Start()
     {
+        Glow.intensity = 0.1f;
         HealthBar.SetMaxHealth(MaxHealth);
         HealthBar.SetHealth(Health);
         Hungry.GetComponent<SpriteRenderer>().enabled = true;
@@ -33,6 +38,7 @@ public class BabyHealth : MonoBehaviour
             HealthBar.enabled = false;
             Hungry.GetComponent<SpriteRenderer>().enabled = false;
             Health = MaxHealth;
+            Glow.intensity = 0.4f;
         }
         else
         {
@@ -46,6 +52,8 @@ public class BabyHealth : MonoBehaviour
     {
         //Play sound
         HealthUp.Play();
+        //glow intenity
+        Glow.intensity += 0.1f;
         //Check if baby health is bellow 3
         if (Health < 3) 
         {
@@ -69,6 +77,8 @@ public class BabyHealth : MonoBehaviour
         HealthBar.SetHealth(Health);
         //Play sound
         Hurt.Play();
+        //Glow Intencity
+        Glow.intensity -= 0.1f;
         //decrese scale
         if (Health > 0)
         {
@@ -85,13 +95,17 @@ public class BabyHealth : MonoBehaviour
         }
         else if (Health <= 0)
         {
-            //kill babyGlob
-            Dead.Play();
-            HealthBar.enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
-            Happy.GetComponent<SpriteRenderer>().enabled = false;
-            Hungry.GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(gameObject,0.4f);
+            isdead();
         }
+    }
+    public void isdead()
+    {
+        //kill babyGlob
+        Dead.Play();
+        HealthBar.enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Happy.GetComponent<SpriteRenderer>().enabled = false;
+        Hungry.GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, 0.4f);
     }
 }
