@@ -21,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Set walking speed
-        horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         //Seting friction (so player wont slide)
         if (Input.GetButtonDown("Horizontal"))
         {
@@ -60,8 +58,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //Set walking speed
+        horizontalMove = Input.GetAxisRaw("Horizontal") * walkSpeed;
         //Move our player
-        controller.Move(horizontalMove * Time.deltaTime , crouch, jump);
+        controller.Move(horizontalMove * Time.deltaTime, crouch, jump);
         jump = false;
     }
 }

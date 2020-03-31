@@ -8,6 +8,9 @@ public class Food : MonoBehaviour
     private Image UIPressFtoEat;
     private Image UIPickUpFood;
 
+    //For baby eating
+    Collider2D baby;
+
     private PlayerHealth PlayerHealth;
     void Start()
     {
@@ -32,8 +35,11 @@ public class Food : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision == baby)
+            return;
         if (collision.tag == "BabyGlob")
         {
+            baby = collision;
             collision.gameObject.GetComponent<BabyHealth>().increceHealth();
             UIPickUpFood.enabled = false;
             UIPressFtoEat.enabled = false;

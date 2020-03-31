@@ -21,7 +21,6 @@ public class BabyHealth : MonoBehaviour
 
     private void Start()
     {
-        Glow.intensity = 0.1f;
         HealthBar.SetMaxHealth(MaxHealth);
         HealthBar.SetHealth(Health);
         Hungry.GetComponent<SpriteRenderer>().enabled = true;
@@ -102,10 +101,12 @@ public class BabyHealth : MonoBehaviour
     {
         //kill babyGlob
         Dead.Play();
-        HealthBar.enabled = false;
+        //disable Ui elements
+        transform.Find("Canvas").gameObject.SetActive(false);
+        //disable player sprite
         GetComponent<SpriteRenderer>().enabled = false;
-        Happy.GetComponent<SpriteRenderer>().enabled = false;
-        Hungry.GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(gameObject, 0.4f);
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        Destroy(gameObject,0.4f);
     }
 }

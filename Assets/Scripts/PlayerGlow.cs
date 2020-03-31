@@ -11,27 +11,35 @@ public class PlayerGlow : MonoBehaviour
 
     private void Update()
     {
-        if (Slider.value != 0)
-        {
-            Glow.pointLightInnerRadius -= 0.01f * Time.deltaTime;
-            Slider.value -= 0.01f * Time.deltaTime;
+        //intensity
+        if (Glow.intensity > 0)
             Glow.intensity -= 0.01f * Time.deltaTime;
-        }
-        if (Slider.value > 1)
-        {
-            Slider.value = 1;
-            Glow.intensity = 1;
-        }
-        if (Slider.value < 0)
-        {
+        else if (Glow.intensity > 2)
+            Glow.intensity = 2;
+        else if (Glow.intensity < 0)
+            Glow.intensity = 0f;
+
+        //slider value
+        if (Slider.value > 0)
+            Slider.value -= 0.01f * Time.deltaTime;
+        else if (Slider.value > 2)
+            Slider.value = 2;
+        else if (Slider.value < 0)
             Slider.value = 0;
-            Glow.intensity = 0.3f;
-        }
+
+        //glow inner radius
+        if (Glow.pointLightInnerRadius > 0)
+           Glow.pointLightInnerRadius -= 0.01f * Time.deltaTime;
+        else if (Glow.pointLightInnerRadius > 2)
+            Glow.pointLightInnerRadius = 2;
+        else if (Glow.pointLightInnerRadius < 0)
+            Glow.pointLightInnerRadius = 0;
+
     }
     public void IncreseGlow(int ammount)
     {
         Glow.pointLightInnerRadius += 0.1f * ammount;
-        Glow.intensity += 0.1f * ammount;
-        Slider.value += 0.1f * ammount;
+        Glow.intensity += 0.15f * ammount;
+        Slider.value += 0.2f * ammount;
     }
 }
