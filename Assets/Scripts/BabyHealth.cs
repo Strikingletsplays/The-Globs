@@ -105,7 +105,8 @@ public class BabyHealth : MonoBehaviour
         transform.Find("Canvas").gameObject.SetActive(false);
         //disable player sprite
         GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<CircleCollider2D>().enabled = false;
+        //GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         Destroy(gameObject,0.4f);
     }

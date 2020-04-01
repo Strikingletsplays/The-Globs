@@ -5844,10 +5844,10 @@ GameObject:
   - component: {fileID: 1252985064190651516}
   - component: {fileID: 1252985064190651517}
   - component: {fileID: 1252985064190651514}
-  - component: {fileID: 1252985064190651507}
+  - component: {fileID: 6144084010849160016}
   - component: {fileID: 850561193}
   - component: {fileID: 1602384516}
-  - component: {fileID: 3195560151889249892}
+  - component: {fileID: 1252985064190651507}
   m_Layer: 13
   m_Name: BabyGlob
   m_TagString: BabyGlob
@@ -6023,7 +6023,7 @@ MonoBehaviour:
   Hurt: {fileID: 1338263470}
   HealthUp: {fileID: 2015112629}
   Glow: {fileID: 957406828}
---- !u!70 &1252985064190651507
+--- !u!70 &6144084010849160016
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6036,8 +6036,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000016829548, y: -1.8947807e-13}
-  m_Size: {x: 0.70137477, y: 0.4600013}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5799999, y: 0.46}
   m_Direction: 1
 --- !u!114 &850561193
 MonoBehaviour:
@@ -6064,8 +6064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a375122886a49bc4d996ffd6216b5793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &3195560151889249892
-CircleCollider2D:
+--- !u!70 &1252985064190651507
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6077,9 +6077,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0318261}
-  serializedVersion: 2
-  m_Radius: 0.42508802
+  m_Offset: {x: 0.003709799, y: 0.043739617}
+  m_Size: {x: 1.1237539, y: 0.5474891}
+  m_Direction: 1
 --- !u!1 &1252985064203175584
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,6 +27,13 @@ public class PlayerHealth : MonoBehaviour
     public float ShakeAmplitude = 1.2f;
     private float ShakeElapsedTime = 0f;
 
+    //glow
+    public PlayerGlow Glow;
+    bool DD_running = false;
+    bool inDarckness = false;
+    //glow ui
+    public Image GlobsNeedGlow;
+
     //Cinemachine Shake
     public CinemachineVirtualCamera VirtualCamera;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
@@ -123,6 +130,46 @@ public class PlayerHealth : MonoBehaviour
             //wait for 2 second
             StartCoroutine(disableNewGlobUI(2f));
         }
+    }
+    //if in the cave and glow off --> take damage
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "CaveBackground" || collision.name == "LightColider")
+        {
+            inDarckness = true;
+            if (Glow.PauseGlow)
+            {
+                //ui (I need light)
+                GlobsNeedGlow.GetComponent<Image>().enabled = true;
+                //Take damage
+                if (!DD_running)
+                    StartCoroutine(DarknessDamage());
+            }
+            else
+            {
+                //ui (I need light)
+                GlobsNeedGlow.GetComponent<Image>().enabled = false;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "CaveBackground" || collision.name == "LightColider")
+        {
+            inDarckness = false;
+            //ui (I need light)
+            GlobsNeedGlow.GetComponent<Image>().enabled = false;
+        }
+    }
+    IEnumerator DarknessDamage()
+    {
+        DD_running = true;
+        yield return new WaitForSeconds(2);
+        if (Glow.PauseGlow && inDarckness)
+        {
+            TakeDamage();
+        }
+        DD_running = false;
     }
     IEnumerator disableNewGlobUI(float waitTime)
     {
