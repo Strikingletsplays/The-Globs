@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Eaten : MonoBehaviour
 {
+    private pickup pickup;
     private BabyHealth BabyHealth;
     private PlayerGlow Glow;
     private Image EatBGlow;
@@ -13,10 +14,11 @@ public class Eaten : MonoBehaviour
         Glow = GameObject.FindGameObjectWithTag("GlowBar").GetComponent<PlayerGlow>();
         EatBGlow = GameObject.FindGameObjectWithTag("GainGlow").GetComponent<Image>();
         BabyHealth = this.GetComponent<BabyHealth>();
+        pickup = this.GetComponent<pickup>();
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "Player")
+        if (pickup.isClose && !pickup.isHolding)
         {
             //Ui Enable
             EatBGlow.enabled = true;
@@ -26,31 +28,14 @@ public class Eaten : MonoBehaviour
                 BabyHealth.isdead();
             }
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            //Ui Enable
-            EatBGlow.enabled = true;
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Glow.IncreseGlow(BabyHealth.Health);
-                BabyHealth.isdead();
-            }
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
+        if (!pickup.isClose)
         {
             //Ui Enable
             EatBGlow.enabled = false;
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Glow.IncreseGlow(BabyHealth.Health);
-                BabyHealth.isdead();
-            }
+        }else if (pickup.isHolding)
+        {
+            //Ui Enable
+            EatBGlow.enabled = false;
         }
     }
 }

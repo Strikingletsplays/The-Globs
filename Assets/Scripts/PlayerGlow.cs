@@ -26,11 +26,12 @@ public class PlayerGlow : MonoBehaviour
                 ResumeGlow();
             }
         }
+
         //intensity
         if (Glow.intensity > 0 && !PauseGlow)
             Glow.intensity -= 0.01f * Time.deltaTime;
-        else if (Glow.intensity > 2)
-            Glow.intensity = 2;
+        else if (Glow.intensity > 1)
+            Glow.intensity = 1;
         else if (Glow.intensity < 0)
         {
             PauseGlowing();
@@ -40,15 +41,12 @@ public class PlayerGlow : MonoBehaviour
         //slider value
         if (Slider.value > 0 && !PauseGlow)
             Slider.value -= 0.01f * Time.deltaTime;
-        else if (Slider.value > 2)
-            Slider.value = 2;
+        else if (Slider.value > 1)
+            Slider.value = 1;
             
-
         //glow inner radius
         if (Glow.pointLightInnerRadius > 0 && !PauseGlow)
-           Glow.pointLightInnerRadius -= 0.01f * Time.deltaTime;
-        else if (Glow.pointLightInnerRadius > 2)
-            Glow.pointLightInnerRadius = 2;
+           Glow.pointLightInnerRadius -= 0.166f * Time.deltaTime;
         else if (Glow.pointLightInnerRadius < 0)
             Glow.pointLightInnerRadius = 0;
 
@@ -66,7 +64,7 @@ public class PlayerGlow : MonoBehaviour
     public void IncreseGlow(int ammount)
     {
         Glow.pointLightInnerRadius += 0.1f * ammount;
-        Glow.intensity += 0.15f * ammount;
-        Slider.value += 0.2f * ammount;
+        Glow.intensity += 0.166f * ammount;
+        Slider.value += 0.166f * ammount;
     }
 }

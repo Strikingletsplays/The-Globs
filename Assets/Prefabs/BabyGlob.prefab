@@ -5847,7 +5847,6 @@ GameObject:
   - component: {fileID: 6144084010849160016}
   - component: {fileID: 850561193}
   - component: {fileID: 1602384516}
-  - component: {fileID: 1252985064190651507}
   m_Layer: 13
   m_Name: BabyGlob
   m_TagString: BabyGlob
@@ -6064,22 +6063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a375122886a49bc4d996ffd6216b5793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &1252985064190651507
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1252985064190651506}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.003709799, y: 0.043739617}
-  m_Size: {x: 1.1237539, y: 0.5474891}
-  m_Direction: 1
 --- !u!1 &1252985064203175584
 GameObject:
   m_ObjectHideFlags: 0

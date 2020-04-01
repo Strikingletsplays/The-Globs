@@ -15,10 +15,6 @@ public class pickup : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, PlayersHoldingPossition.position);
         isClose = distance < 1f;
-/*        if (isHolding)
-        {
-            gameObject.transform.position = PlayersHoldingPossition.position;
-        }*/
     }
 
     void OnMouseDown()
