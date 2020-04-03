@@ -11,11 +11,11 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 ScaleChangeSize;
     //Spawn Baby
     public GameObject baby;
-    public Image NewBaby;
+    private Image NewBaby;
     private Transform SpawnBaby; //Position to spawn
-    public GlobPickupUI AllBabys; // Ui to pickup glob
+    private GlobPickupUI AllBabys; // Ui to pickup glob
     //UI --- Flip canvas for "PressFtoEat" && (oops..) && HealthBar
-    public Canvas Canvas;
+    private Canvas Canvas;
     public HealthBar healthbar;
     //Sound
     public AudioSource Hurt;
@@ -23,22 +23,27 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource BabyGlobCreate;
 
     //Shake
-    public float ShakeDuration = 0.3f;
-    public float ShakeAmplitude = 1.2f;
-    private float ShakeElapsedTime = 0f;
+    public float DamageShakeDuration = 0.3f;
+    public float DamageShakeAmplitude = 1.2f;
+    private float DamageShakeElapsedTime = 0f;
 
     //glow
-    public PlayerGlow Glow;
+    private PlayerGlow Glow;
     bool DD_running = false;
     bool inDarckness = false;
     //glow ui
     public Image GlobsNeedGlow;
+    public Image EnableGlow;
 
     //Cinemachine Shake
     public CinemachineVirtualCamera VirtualCamera;
     private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
     void Start()
     {
+        Glow = GameObject.FindGameObjectWithTag("GlowBar").GetComponent<PlayerGlow>();
+        Canvas = gameObject.transform.Find("Canvas").GetComponent<Canvas>();
+        AllBabys = GameObject.FindGameObjectWithTag("GameScripts").GetComponent<GlobPickupUI>();
+        NewBaby = gameObject.transform.Find("Canvas").gameObject.transform.Find("NewBaby").GetComponent<Image>();
         Health = 2;
         healthbar.SetMaxHealth(MaxHealth);
         healthbar.SetHealth(Health);
@@ -74,15 +79,15 @@ public class PlayerHealth : MonoBehaviour
             Health = 4;
         }
         //For shake (timer)
-        if (ShakeElapsedTime > 0)
+        if (DamageShakeElapsedTime > 0)
         {
-            virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
-            ShakeElapsedTime -= Time.deltaTime;
+            virtualCameraNoise.m_AmplitudeGain = DamageShakeAmplitude;
+            DamageShakeElapsedTime -= Time.deltaTime;
         }
         else
         {
             virtualCameraNoise.m_AmplitudeGain = 0f;
-            ShakeElapsedTime = 0f;
+            DamageShakeElapsedTime = 0f;
         }
     }
     public void TakeDamage()
@@ -101,7 +106,7 @@ public class PlayerHealth : MonoBehaviour
         Health -= 1;
         healthbar.SetHealth(Health);
         //Camera Shake
-        ShakeElapsedTime = ShakeDuration;
+        DamageShakeElapsedTime = DamageShakeDuration;
     }
     public void increceHealth()
     {
@@ -140,7 +145,9 @@ public class PlayerHealth : MonoBehaviour
             if (Glow.PauseGlow)
             {
                 //ui (I need light)
-                GlobsNeedGlow.GetComponent<Image>().enabled = true;
+                GlobsNeedGlow.enabled = true;
+                if(!(Glow.Slider.value == 0))
+                    EnableGlow.enabled = true;
                 //Take damage
                 if (!DD_running)
                     StartCoroutine(DarknessDamage());
@@ -149,6 +156,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 //ui (I need light)
                 GlobsNeedGlow.GetComponent<Image>().enabled = false;
+                EnableGlow.enabled = false;
             }
         }
     }
@@ -158,7 +166,8 @@ public class PlayerHealth : MonoBehaviour
         {
             inDarckness = false;
             //ui (I need light)
-            GlobsNeedGlow.GetComponent<Image>().enabled = false;
+            GlobsNeedGlow.enabled = false;
+            EnableGlow.enabled = false;
         }
     }
     IEnumerator DarknessDamage()

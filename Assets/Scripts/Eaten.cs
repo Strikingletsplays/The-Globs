@@ -13,15 +13,22 @@ public class Eaten : MonoBehaviour
     {
         Glow = GameObject.FindGameObjectWithTag("GlowBar").GetComponent<PlayerGlow>();
         EatBGlow = GameObject.FindGameObjectWithTag("GainGlow").GetComponent<Image>();
-        BabyHealth = this.GetComponent<BabyHealth>();
-        pickup = this.GetComponent<pickup>();
+        BabyHealth = GetComponent<BabyHealth>();
+        pickup = GetComponent<pickup>();
     }
     private void Update()
     {
         if (pickup.isClose && !pickup.isHolding)
         {
-            //Ui Enable
-            EatBGlow.enabled = true;
+            if(BabyHealth.Health == 3)
+            {
+                //Ui Enable
+                EatBGlow.enabled = true;
+            }
+            else
+            {
+                EatBGlow.enabled = false;
+            }
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 Glow.IncreseGlow(BabyHealth.Health);
@@ -32,7 +39,8 @@ public class Eaten : MonoBehaviour
         {
             //Ui Enable
             EatBGlow.enabled = false;
-        }else if (pickup.isHolding)
+        }
+        else if (pickup.isHolding)
         {
             //Ui Enable
             EatBGlow.enabled = false;
