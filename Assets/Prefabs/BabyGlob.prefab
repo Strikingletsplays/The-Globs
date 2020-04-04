@@ -40,7 +40,7 @@ AudioSource:
   m_GameObject: {fileID: 20713163}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e3ac3c3e9f7e0734496b6c387953d26a,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 32aa254cb1886ce439041c3f4c87b591,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cada71a1867e3374a89363f7e8809ab4, type: 3}
   m_PlayOnAwake: 0
@@ -260,7 +260,7 @@ AudioSource:
   m_GameObject: {fileID: 1338263469}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e3ac3c3e9f7e0734496b6c387953d26a,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 32aa254cb1886ce439041c3f4c87b591,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 6d3064134b08db44cad52d6505981ffe, type: 3}
   m_PlayOnAwake: 0
@@ -632,7 +632,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3902,10 +3902,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -5076,9 +5076,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2105826941
+  m_SortingLayer: 2
+  m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -5176,7 +5176,7 @@ AudioSource:
   m_GameObject: {fileID: 2015112628}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e3ac3c3e9f7e0734496b6c387953d26a,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 32aa254cb1886ce439041c3f4c87b591,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ea4885d61a6ee4a4d95aec290e349453, type: 3}
   m_PlayOnAwake: 0
@@ -6184,7 +6184,7 @@ AudioSource:
   m_GameObject: {fileID: 7652176910213629786}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e3ac3c3e9f7e0734496b6c387953d26a,
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 32aa254cb1886ce439041c3f4c87b591,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: def6a772ca181174bbf30e2cd350462d, type: 3}
   m_PlayOnAwake: 0

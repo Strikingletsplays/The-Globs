@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource Hurt;
     public AudioSource HealthUp;
     public AudioSource BabyGlobCreate;
+    public AudioSource NomNomNom;
 
     //Shake
     public float DamageShakeDuration = 0.3f;
@@ -34,6 +35,9 @@ public class PlayerHealth : MonoBehaviour
     //glow ui
     public Image GlobsNeedGlow;
     public Image EnableGlow;
+
+    //Eating Particles
+    public GameObject EatingParticles;
 
     //Cinemachine Shake
     public CinemachineVirtualCamera VirtualCamera;
@@ -89,6 +93,11 @@ public class PlayerHealth : MonoBehaviour
             virtualCameraNoise.m_AmplitudeGain = 0f;
             DamageShakeElapsedTime = 0f;
         }
+    }
+    public void eatBaby()
+    {
+        Destroy(Instantiate(EatingParticles, transform.position, transform.rotation), 0.5f);
+        NomNomNom.Play();
     }
     public void TakeDamage()
     {

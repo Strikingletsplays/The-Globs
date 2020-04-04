@@ -1,27 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.UI;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PauseMenu : MonoBehaviour 
 {
-    public Slider MainVolume;
     public float MainVolumeTemp;
 
     public AudioMixer mixer;
+    public AudioMixer Effects;
     public static bool GameIsPaused = false;
     public bool Options = false;
     public GameObject Camera;
     public GameObject PauseMenuUI;
+    public Light2D GlobalLight;
 
-    private void Awake()
-    {
-        if (mixer.GetFloat("MusicVol", out MainVolumeTemp))
-        {
-            //Need to fix :/
-            //MainVolume.value = Mathf.Log10(MainVolumeTemp);
-        }
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -35,6 +28,10 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+    }
+    public void Brightness(float intensity)
+    {
+        GlobalLight.intensity = intensity;
     }
     public void OptionsIsUp()
     {
@@ -71,5 +68,9 @@ public class PauseMenu : MonoBehaviour
     public void SetLevel(float SliderValue)
     {
         mixer.SetFloat("MusicVol", Mathf.Log10(SliderValue) * 20);
+    }
+    public void SetEffectLevel(float SliderValue)
+    {
+        Effects.SetFloat("EffectVol", Mathf.Log10(SliderValue) * 20);
     }
 }

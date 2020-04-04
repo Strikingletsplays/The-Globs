@@ -8,9 +8,11 @@ public class Eaten : MonoBehaviour
     private pickup pickup;
     private BabyHealth BabyHealth;
     private PlayerGlow Glow;
+    private PlayerHealth Glob;
     private Image EatBGlow;
     private void Awake()
     {
+        Glob = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         Glow = GameObject.FindGameObjectWithTag("GlowBar").GetComponent<PlayerGlow>();
         EatBGlow = GameObject.FindGameObjectWithTag("GainGlow").GetComponent<Image>();
         BabyHealth = GetComponent<BabyHealth>();
@@ -31,6 +33,7 @@ public class Eaten : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                Glob.eatBaby();
                 Glow.IncreseGlow(BabyHealth.Health);
                 BabyHealth.isdead();
             }
