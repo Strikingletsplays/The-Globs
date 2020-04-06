@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Experimental.Rendering.Universal;
+﻿using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,12 +41,6 @@ public class PlayerGlow : MonoBehaviour
             Slider.value -= 0.01f * Time.deltaTime;
         else if (Slider.value > 1)
             Slider.value = 1;
-            
-        //glow inner radius
-        if (Glow.pointLightInnerRadius > 0 && !PauseGlow)
-           Glow.pointLightInnerRadius -= 0.166f * Time.deltaTime;
-        else if (Glow.pointLightInnerRadius < 0)
-            Glow.pointLightInnerRadius = 0;
 
     }
     public void PauseGlowing()
@@ -63,7 +55,6 @@ public class PlayerGlow : MonoBehaviour
     }
     public void IncreseGlow(int ammount)
     {
-        Glow.pointLightInnerRadius += 0.1f * ammount;
         Glow.intensity += 0.166f * ammount;
         Slider.value += 0.166f * ammount;
     }
