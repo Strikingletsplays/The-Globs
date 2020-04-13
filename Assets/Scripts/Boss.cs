@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
     private Animator BossAnim;
     private Transform PlayerPos;
-    public float timeBetweenAtack = 1.5f;
-    public float Speed = 2;
     public float MinDistance = 6;
     private void Start()
     {
@@ -21,26 +20,22 @@ public class Boss : MonoBehaviour
             if (!(Vector2.Distance(transform.position, PlayerPos.position) < 1))
             {
                 RotateEnemyToPlayer();
-                BossAnim.SetBool("isMoving", true);
-                transform.position = Vector2.MoveTowards(transform.position, PlayerPos.position, Speed * Time.deltaTime);
-            }
-            else 
-            { 
-                transform.position = transform.position;
+                BossAnim.SetTrigger("isMoving");
             }
         }
-        else 
-        { 
-            BossAnim.SetBool("isMoving", false);
+        else
+        {
+            BossAnim.ResetTrigger("isMoving");
+            BossAnim.SetTrigger("isIdle");
         }
         //if Atacking
         if (Vector2.Distance(transform.position, PlayerPos.position) < 1.5)
         {
-            BossAnim.SetBool("isAtacking", true);
+            BossAnim.SetTrigger("isAtacking");
         }
-        else 
+        else
         {
-            BossAnim.SetBool("isAtacking", false);
+            BossAnim.ResetTrigger("isAtacking");
         }
     }
     void RotateEnemyToPlayer()
