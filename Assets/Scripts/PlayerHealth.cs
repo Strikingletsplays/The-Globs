@@ -96,8 +96,8 @@ public class PlayerHealth : MonoBehaviour
     }
     public void eatBaby()
     {
-        Destroy(Instantiate(EatingParticles, transform.position, transform.rotation), 0.5f);
         NomNomNom.Play();
+        Destroy(Instantiate(EatingParticles, transform.position, transform.rotation), 1f);
     }
     public void TakeDamage()
     {

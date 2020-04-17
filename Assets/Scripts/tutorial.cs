@@ -20,7 +20,7 @@ public class tutorial : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if((collision.tag == "Player" && FirstJump) || (collision.tag == "BabyGlob" && FirstJump)) {
+        if((collision.tag == "Player" && FirstJump)) {
             PickUpObjects.enabled = false;
             Jump.enabled = true;
             if (Input.GetKey(KeyCode.Space))
@@ -30,6 +30,10 @@ public class tutorial : MonoBehaviour
                 SecondTrigger.enabled = false;
             }
         }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Jump.enabled = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

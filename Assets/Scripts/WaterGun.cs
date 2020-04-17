@@ -54,7 +54,7 @@ public class WaterGun : MonoBehaviour
         gun.transform.parent = null;
         //make the gun go under players possition
         gun.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-        gun.transform.rotation = Quaternion.Euler(33.223f, 29.443f, -27.444f);
+        gun.transform.rotation = Quaternion.Euler(0f, 0f, -36.562f);
         //WaitForSeconds for seconds
         yield return new WaitForSeconds(time);
         //set triger to enabled

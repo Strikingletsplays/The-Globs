@@ -5,18 +5,17 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    public float MouseSensitivity = 0.1f;
-    GameObject crosshair;
-
     private void Start()
     {
-        crosshair = GameObject.Find("crosshair");
+        Cursor.visible = false;
     }
     // Update is called once per frame
     void Update()
     {
-        Vector3 _mousePos = Input.mousePosition;
-        crosshair.transform.position = Vector2.Lerp(transform.position, _mousePos, MouseSensitivity);
-        print(_mousePos);
+        MoveCrosshair();
+    }
+    private void MoveCrosshair()
+    {
+        transform.position = Input.mousePosition;
     }
 }
