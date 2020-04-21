@@ -13,8 +13,8 @@ public class WaterGun : MonoBehaviour
     }
     private void Update()
     {
-        //if player is holding gun and presses "F" he drops it
-        if (isHoldingGun && Input.GetKey(KeyCode.F) && controller.m_Grounded)
+        //if player is holding gun and presses "X" he drops it
+        if (isHoldingGun && Input.GetKey(KeyCode.X) && controller.m_Grounded)
         {
             StartCoroutine(DisableTrigger(2f));
             isHoldingGun = false;

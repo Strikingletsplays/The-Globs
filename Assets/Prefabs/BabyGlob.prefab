@@ -6050,6 +6050,7 @@ MonoBehaviour:
   Hurt: {fileID: 1338263470}
   HealthUp: {fileID: 2015112629}
   Glow: {fileID: 957406828}
+  GlobsNeedGlow: {fileID: 0}
 --- !u!114 &850561193
 MonoBehaviour:
   m_ObjectHideFlags: 0

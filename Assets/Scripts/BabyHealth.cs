@@ -1,5 +1,7 @@
 ﻿using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class BabyHealth : MonoBehaviour
 {
@@ -18,9 +20,12 @@ public class BabyHealth : MonoBehaviour
 
     //Glow anim
     public Light2D Glow;
+    bool inDarckness = false;
+    private Image GlobsNeedGlow;
 
     private void Start()
     {
+        GlobsNeedGlow = GameObject.FindGameObjectWithTag("GlobsNeedGlow").GetComponent<Image>();
         HealthBar.SetMaxHealth(MaxHealth);
         HealthBar.SetHealth(Health);
         Hungry.GetComponent<SpriteRenderer>().enabled = true;
@@ -109,5 +114,35 @@ public class BabyHealth : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         Destroy(gameObject,0.4f);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "CaveBackground" || collision.name == "LightColider")
+        {
+            GlobsNeedGlow.GetComponent<Image>().enabled = true;
+            inDarckness = true;
+            StartCoroutine(DarknessDamage());
+        }else
+        {
+            //ui (I need light)
+            GlobsNeedGlow.GetComponent<Image>().enabled = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "CaveBackground" || collision.name == "LightColider")
+        {
+            inDarckness = false;
+            //ui (I need light)
+            GlobsNeedGlow.enabled = false;
+        }
+    }
+    IEnumerator DarknessDamage()
+    {
+        yield return new WaitForSeconds(2);
+        if (Health==1 && inDarckness)
+        {
+            TakeDamage();
+        }
     }
 }

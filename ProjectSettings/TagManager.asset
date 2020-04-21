@@ -18,6 +18,8 @@ TagManager:
   - CaveBackground
   - GlowBar
   - GainGlow
+  - GlobsNeedGlow
+  - AI
   layers:
   - Default
   - TransparentFX
