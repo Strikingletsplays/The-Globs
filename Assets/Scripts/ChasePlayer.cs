@@ -6,6 +6,7 @@ public class ChasePlayer : MonoBehaviour
     private Animator EnemyAnim;
     private Transform PlayerPos;
     public float MinDistance = 8;
+    public PlayerHealth PlayerHealth;
     GameObject parent;
     private void Start()
     {
@@ -59,5 +60,9 @@ public class ChasePlayer : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(-transform.rotation.x, -180, transform.rotation.z);
         }
+    }
+    void TakeDamage() //Player takes damage
+    {
+        PlayerHealth.TakeDamage();
     }
 }

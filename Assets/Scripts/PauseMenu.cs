@@ -43,14 +43,12 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
-        //Camera.GetComponent<AudioSource>().volume = 0.2f;
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void Pause()
     {
-        //Camera.GetComponent<AudioSource>().volume = 0.05f;
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

@@ -41,12 +41,13 @@ public class tutorial : MonoBehaviour
         {
             FirstTrigger.enabled = false;
             CharMove.enabled = false;
-            StartCoroutine(delay(4));
+            PickUpObjects.enabled = true;
+            if(Input.GetMouseButtonDown(0))
+                StartCoroutine(delay(4));
         }
     }
     IEnumerator delay(int seconds)
     {
-        PickUpObjects.enabled = true;
         yield return new WaitForSeconds(seconds);
         PickUpObjects.enabled = false;
     }

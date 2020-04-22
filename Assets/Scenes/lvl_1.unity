@@ -285,7 +285,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1315613023}
   m_HandleRect: {fileID: 1279821562}
   m_Direction: 0
-  m_MinValue: 0.3
+  m_MinValue: 0.5
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -12385,7 +12385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: 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
+    dataString: UEsDBBQAAAgIAAAQIeyDaonUaQIAAA8FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK54WSCQS8t12HkD3kUSFbufgirDFWIUsuSQ6QFP++I9nGDnsBueeh7p6xv4hQtoLMabM2gj9qDuTniPgz+THqgw9wZDutNuITupx3wV3hk1jIeWVOaMQjX2Z1Cc6I7JfaSZ9MEayVyLUpV3wHibbOIpwzaQFDRjtfrRD6GpEj/o1jX3LC03ThT594iunojMcMlAPTp8bLSUyj2bLLp5PZYr68aYumEzq/vZnHqzG9DeW1yiQrK+BeS98lmrb1cchSKLJN8IIyLaWwLUPiTlVwIGGVrVEfJnDBUHGgFU383QWIXeE8gWH5c55bcK0hhp3uhEHrmr7kt278LJndN8Q+mKwDhRmdNeKbto//ZYyjEM6NLh+6myPqb3GFyPav7JQx6waWD+G7Afng0IHJPdtKeC9APem10bXiGHSm9qW1held/3gRlxSQ7Xu8oXoF1lVveTfhbr5ewznoPyZSlFsfmswaYCN18DysBRiczh8kHJbGti0Q9Sz+Wnhju+F2tYF7YazDUKtSeXpbXRufSlbBM6+mdok2CgLckq5AMelOL9jGXQ/xKja49ipyz/x71F7exrrX46okwH0+pVehF324DMsW+vAItniunRQKetI+8IQ+JVqpZseGnnRlm9rkLBuU7WrBv68WYUAX84yzPM9gij/jKF7EtxHNt8ubLZ1HjITdEwp1MvnSEG3twakNPVG4aN33ZbQ2rAoLzw07rMVnqQeeC5XrTWYA1PP3FhYM3oKvJl9xgQ5twDmhwsDJV0qkzvbA00ujNEhdHZ1had8lJZX40M4jKUnCByUlZ3L+B1BLAwQUAAAICAAAECHsjtOKz2wAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UmKqgblpckpiWlpyqhGQ0DW0NLc0MzRIS7IwTjIwNUxUigWqL6ksSPVLzE2F6AlILMlIy8xLycxL13MvykxxBxmtFFsLAFBLAQItABQAAAgIAAAQIeyDaonUaQIAAA8FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIeyO04rPbAAAAHgAAAAJACQAAAAAAAAAAAAAALYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAbQMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -18765,6 +18765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinDistance: 6
+  PlayerHealth: {fileID: 0}
 --- !u!61 &1379279478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21274,7 +21275,6 @@ GameObject:
   - component: {fileID: 1645786563}
   - component: {fileID: 1645786562}
   - component: {fileID: 1645786561}
-  - component: {fileID: 1645786560}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Boss
@@ -21290,25 +21290,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645786558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.6, y: -12.6, z: 0}
+  m_LocalPosition: {x: 21.3, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1819294949}
   m_Father: {fileID: 865297486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1645786560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645786558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff76a581ad39374984944261ddda3ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1645786561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21322,6 +21310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinDistance: 8
+  PlayerHealth: {fileID: 1491291022}
 --- !u!95 &1645786562
 Animator:
   serializedVersion: 3
