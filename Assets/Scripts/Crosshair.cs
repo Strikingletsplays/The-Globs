@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Crosshair : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class Crosshair : MonoBehaviour
     void Update()
     {
         MoveCrosshair();
-        if (Input.GetMouseButtonDown(0)) {
-            //if(gameObject.GetComponent<pickup>())
-                this.GetComponent<Image>().color = Color.green;
+        if (Input.GetMouseButtonDown(0))
+        {
+           this.GetComponent<Image>().color = Color.green;
         }
-        if (Input.GetMouseButtonUp(0)) {
-            //if(gameObject.GetComponent<pickup>())
-                this.GetComponent<Image>().color = Color.white;
+        if (Input.GetMouseButtonUp(0))
+        {
+           this.GetComponent<Image>().color = Color.white;
         }
     }
     private void MoveCrosshair()

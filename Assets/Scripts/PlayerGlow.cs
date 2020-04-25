@@ -15,7 +15,7 @@ public class PlayerGlow : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
+        if(Slider.value != 0 && Input.GetKeyDown(KeyCode.G))
         {
             if (!PauseGlow)
                 PauseGlowing();

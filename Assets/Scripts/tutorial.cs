@@ -15,8 +15,8 @@ public class tutorial : MonoBehaviour
     void Awake()
     {
         Jump.enabled = false;
-        CharMove.enabled = true;
         PickUpObjects.enabled = false;
+        CharMove.enabled = true;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

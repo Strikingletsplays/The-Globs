@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     bool inDarckness = false;
     //glow ui
     public Image GlobsNeedGlow;
+    public Image GlobsDontNeedGlow;
     public Image EnableGlow;
 
     //Eating Particles
@@ -72,7 +73,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Canvas.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 0, transform.eulerAngles.z);
         }
-        if (Health <= 0)
+        if (Health <= 0) //if player dies
         {
             //enable death gui
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -92,6 +93,16 @@ public class PlayerHealth : MonoBehaviour
         {
             virtualCameraNoise.m_AmplitudeGain = 0f;
             DamageShakeElapsedTime = 0f;
+        }
+        //UI for not glowing outside
+        if (!Glow.PauseGlow && !inDarckness && !GlobsNeedGlow.enabled)
+        {
+            //ui (globs dont need to glow out side)
+            GlobsDontNeedGlow.enabled = true;
+        }
+        else
+        {
+            GlobsDontNeedGlow.enabled = false;
         }
     }
     public void eatBaby()
@@ -145,8 +156,7 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(disableNewGlobUI(2f));
         }
     }
-    //if in the cave and glow off --> take damage
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)     //if in the cave and glow off --> take damage
     {
         if (collision.name == "CaveBackground" || collision.name == "LightColider")
         {
@@ -163,8 +173,8 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                //ui (I need light)
-                GlobsNeedGlow.GetComponent<Image>().enabled = false;
+                //if glow is enabled
+                GlobsNeedGlow.enabled = false;
                 EnableGlow.enabled = false;
             }
         }
@@ -174,15 +184,14 @@ public class PlayerHealth : MonoBehaviour
         if (collision.name == "CaveBackground" || collision.name == "LightColider")
         {
             inDarckness = false;
-            //ui (I need light)
-            GlobsNeedGlow.enabled = false;
-            EnableGlow.enabled = false;
+            //Hide Ui
+            StartCoroutine(HideUi());
         }
     }
     IEnumerator DarknessDamage()
     {
         DD_running = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.5f);
         if (Glow.PauseGlow && inDarckness)
         {
             TakeDamage();
@@ -193,6 +202,13 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         NewBaby.enabled = false;
+        yield return null;
+    }
+    IEnumerator HideUi()
+    {
+        yield return new WaitForSeconds(3);
+        GlobsNeedGlow.enabled = false;
+        EnableGlow.enabled = false;
         yield return null;
     }
 }

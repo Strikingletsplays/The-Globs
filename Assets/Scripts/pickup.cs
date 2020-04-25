@@ -5,10 +5,12 @@ public class pickup : MonoBehaviour
     private Transform PlayersHoldingPossition;
     public bool isHolding = false;
     public bool isClose;
+    private Rigidbody2D objRB;
     private float distance;
 
     void Start()
     {
+        objRB = GetComponent<Rigidbody2D>();
         PlayersHoldingPossition = GameObject.FindGameObjectWithTag("Destination").transform;
     }
     void Update()
@@ -22,9 +24,9 @@ public class pickup : MonoBehaviour
         if (isClose)
         {
             isHolding = true;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-            GetComponent<Rigidbody2D>().simulated = false;
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            objRB.gravityScale = 0;
+            objRB.simulated = false;
+            objRB.velocity = Vector3.zero;
             gameObject.transform.position = PlayersHoldingPossition.position;
             transform.parent = GameObject.Find("Destination").transform;
         }
@@ -33,7 +35,7 @@ public class pickup : MonoBehaviour
     {
         isHolding = false;
         transform.parent = null;
-        GetComponent<Rigidbody2D>().gravityScale = 3;
-        GetComponent<Rigidbody2D>().simulated = true;
+        objRB.gravityScale = 3;
+        objRB.simulated = true;
     }
 }
