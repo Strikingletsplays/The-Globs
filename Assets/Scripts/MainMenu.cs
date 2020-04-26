@@ -7,21 +7,12 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class MainMenu : MonoBehaviour
 {
     public Slider MusicVolume;
-    private float MusicVolumeTemp;
+    private float brightnessF;
     
     public GameObject OptionsMenu;
     public AudioMixer mixer;
     public AudioMixer Effects;
-    /*
-        private void Awake()
-        {
 
-            if (mixer.GetFloat("MusicVol", out MusicVolumeTemp))
-            {
-                //Need to fix :/
-                //MusicVolume.value = Mathf.Log10(MusicVolumeTemp);
-            }
-        }*/
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -37,5 +28,10 @@ public class MainMenu : MonoBehaviour
     public void SetEffectLevel(float SliderValue)
     {
         Effects.SetFloat("EffectVol", Mathf.Log10(SliderValue) * 20);
+    }
+    public void brightness(float SliderValue)
+    {
+        brightnessF = Mathf.Log10(SliderValue) * 20;
+        RenderSettings.ambientLight = new Color (brightnessF, brightnessF, brightnessF,1);
     }
 }

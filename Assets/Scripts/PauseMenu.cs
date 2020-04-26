@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     public bool Options = false;
     public GameObject Camera;
     public GameObject PauseMenuUI;
+    public GameObject OptionsMenuUI;
     public Light2D GlobalLight;
 
     void Update()
@@ -22,6 +23,13 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused && !Options)
             {
                 Resume();
+            }else if(GameIsPaused && Options)
+            {
+                //close options
+                OptionsMenuUI.SetActive(false);
+                Options = false;
+                //go back to pause screen
+                Pause();
             }
             else if (!Options)
             {

@@ -5,10 +5,9 @@ using UnityEngine;
 public class SpawnWater : MonoBehaviour
 {
     public GameObject FirePoint;
-    public GameObject Water;
-    private GameObject ParticleSystem;
-    private Transform Player;
-    public bool triggerTurn = true;
+    public GameObject Water;          //water obj.
+    private GameObject water = null;  //particles to spawn
+    private Transform Player;         //for rotation
 
     private void Start()
     {
@@ -17,35 +16,32 @@ public class SpawnWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //if shoot
         {
-            ParticleSystem = Instantiate(Water, FirePoint.transform.position, Quaternion.Euler(0,90f,0));
-            ParticleSystem.GetComponent<ParticleSystem>().Play();
+            water = Instantiate(Water, FirePoint.transform.position, Quaternion.Euler(0, 90f, 0));
+            water.GetComponent<ParticleSystem>().Play();
         }
-        if (Player.rotation.y == -1 && ParticleSystem)
+        if (Player.rotation.y < 0 && water)
         {
-            if (triggerTurn)
-            {
-                triggerTurn = false;
-                ParticleSystem.transform.rotation = Quaternion.Inverse(ParticleSystem.transform.rotation); //for shooting left
-            }
+            water.transform.rotation = Quaternion.Euler(0, -90f, 0); //for shooting left
         }
-        else
+        else if (Player.rotation.y > 0 && water)
         {
-            triggerTurn = true;
+            water.transform.rotation = Quaternion.Euler(0, 90f, 0); //for shooting right
         }
-        if (ParticleSystem) //if water is spawned
+        if (water) //if water is spawned
         {
-            ParticleSystem.transform.position = FirePoint.transform.position;
+            water.transform.position = FirePoint.transform.position;
         }
-        if (Input.GetKeyUp(KeyCode.E))
+
+        if (Input.GetKeyUp(KeyCode.E))  //Destroy particle system
         {
-            ParticleSystem.GetComponent<ParticleSystem>().Stop();
-            Destroy(ParticleSystem, 4);
+            water.GetComponent<ParticleSystem>().Stop();
+            Destroy(water, 4);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //enable ui (Press E to pickup shoot)
+        //enable ui (Press E to shoot)
     }
 }
