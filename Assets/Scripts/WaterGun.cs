@@ -1,15 +1,19 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterGun : MonoBehaviour
 {
     private CharacterController2D controller;
     public bool isHoldingGun = false;
-    private GameObject gun;
+
+    //For inventory UI
+    private Inventory Inventory;
+    public GameObject WaterGunGO;
+    private GameObject toDelete;
     private void Start()
     {
-        controller = GetComponent<CharacterController2D>();
+        Inventory = GameObject.FindGameObjectWithTag("InventoryPanel").GetComponent<Inventory>();
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>();
     }
     private void Update()
     {
@@ -18,31 +22,35 @@ public class WaterGun : MonoBehaviour
         {
             StartCoroutine(DisableTrigger(2f));
             isHoldingGun = false;
+            toDelete = GameObject.FindGameObjectWithTag("WaterGunUI");
+            Destroy(toDelete);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "water-gun")
+        if (collision.tag == "Player")
         {
+            //InventoryUI
+            Inventory.addItem(WaterGunGO);
+
             isHoldingGun = true;
-            gun = collision.gameObject;
             //set triger to false
-            collision.GetComponent<PolygonCollider2D>().enabled = false;
+            GetComponent<PolygonCollider2D>().enabled = false;
             //fix guns (position-rotation) and position to Destinations
-            collision.transform.position += new Vector3(0f, 0.1f, 0f);
-            collision.transform.position = GameObject.Find("Destination").transform.position;
+            transform.position += new Vector3(0f, 0.1f, 0f);
+            transform.position = GameObject.Find("Destination").transform.position;
             //make parent
-            collision.transform.parent = GameObject.Find("Destination").transform;
+            transform.parent = GameObject.Find("Destination").transform;
 
             //fix rotation of gun
-            if (transform.position.x > gun.transform.position.x)
+            if (controller.gameObject.transform.position.x > this.transform.position.x)
             {
-                collision.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             }
-            else if (transform.position.x < gun.transform.position.x)
+            else if (controller.gameObject.transform.position.x < this.transform.position.x)
             {
-                collision.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
             //Enable Ui (To-Do)
         }
@@ -51,14 +59,14 @@ public class WaterGun : MonoBehaviour
     IEnumerator DisableTrigger(float time)
     {
         //set parent to null
-        gun.transform.parent = null;
+        transform.parent = null;
         //make the gun go under players possition
-        gun.transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-        gun.transform.rotation = Quaternion.Euler(0f, 0f, -36.562f);
+        transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+        transform.rotation = Quaternion.Euler(0f, 0f, -36.562f);
         //WaitForSeconds for seconds
         yield return new WaitForSeconds(time);
         //set triger to enabled
-        gun.GetComponent<PolygonCollider2D>().enabled = true;
+        GetComponent<PolygonCollider2D>().enabled = true;
         yield return null;
     }
 }

@@ -3,13 +3,20 @@ using UnityEngine.UI;
 
 public class keys : MonoBehaviour
 {
-    public Image keysUI;
+    public GameObject keysGO;
+    private Inventory Inventory;
+    private void Start()
+    {
+        Inventory = GameObject.FindGameObjectWithTag("InventoryPanel").GetComponent<Inventory>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
-            //get key
-            keysUI.enabled = true;
+            //InventoryUI
+            Inventory.addItem(keysGO);
+
             Destroy(this.gameObject);
         }
     }

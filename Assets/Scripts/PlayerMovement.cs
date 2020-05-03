@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         }
         //Jumping
         if (Input.GetButtonDown("Jump"))
-            {
+        {
             if (controller.m_Grounded) //Player is Grounded
             {
                 //Play sound
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
                 Animator.SetBool("Isjumping", true);
                 jump = true;
             }    
-            }
+        }
         //Crouching
         if (Input.GetButtonDown("Crouch"))
             {
