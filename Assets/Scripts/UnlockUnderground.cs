@@ -17,7 +17,7 @@ public class UnlockUnderground : MonoBehaviour
                 PressFtoUnlock.enabled = true;
                 if (Input.GetKey(KeyCode.F))
                 {
-                   PressFtoUnlock.enabled = false;
+                    PressFtoUnlock.enabled = false;
                     Destroy(toDelete);
                     Destroy(this.gameObject);
                 }

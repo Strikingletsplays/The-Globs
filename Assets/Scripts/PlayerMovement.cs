@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     //Sound
     public AudioSource Jump;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -43,14 +44,14 @@ public class PlayerMovement : MonoBehaviour
             }    
         }
         //Crouching
-        if (Input.GetButtonDown("Crouch"))
+/*        if (Input.GetButtonDown("Crouch"))
             {
                 crouch = true;
             }
          else if (Input.GetButtonUp("Crouch"))
             {
                 crouch = false;
-            }
+            }*/
     }
     public void onLanding()
     {
