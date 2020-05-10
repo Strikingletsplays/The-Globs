@@ -22,6 +22,8 @@ TagManager:
   - AI
   - InventoryPanel
   - Keys
+  - KeysUI
+  - WaterGunUI
   layers:
   - Default
   - TransparentFX
@@ -35,8 +37,8 @@ TagManager:
   - Ground
   - Enemy
   - Trigers-non-stuck
-  - Food
-  - BabyGlobs
+  - PikableOBJ
+  - 
   - 
   - 
   - 

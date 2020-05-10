@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20713165}
   - component: {fileID: 20713164}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Died
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 957406827}
   - component: {fileID: 957406828}
   - component: {fileID: 9000482874448540081}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Baby Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1338263471}
   - component: {fileID: 1338263470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BabyHurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1482057987}
   - component: {fileID: 1482057989}
   - component: {fileID: 1482057988}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5111,7 +5111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489576552}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: BabyAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5146,7 +5146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2015112630}
   - component: {fileID: 2015112629}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: healthUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5276,7 +5276,7 @@ GameObject:
   - component: {fileID: 1252985062373628403}
   - component: {fileID: 1252985062373628402}
   - component: {fileID: 1252985062373628405}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5375,7 +5375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1252985062443056698}
   - component: {fileID: 1252985062443056699}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Baby_Hungry
   m_TagString: Hungry
   m_Icon: {fileID: 0}
@@ -5457,7 +5457,7 @@ GameObject:
   - component: {fileID: 1252985062670378481}
   - component: {fileID: 1252985062670378495}
   - component: {fileID: 1252985062670378494}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5531,7 +5531,7 @@ GameObject:
   - component: {fileID: 1252985062682749183}
   - component: {fileID: 1252985062682749181}
   - component: {fileID: 1252985062682749180}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5605,7 +5605,7 @@ GameObject:
   - component: {fileID: 1252985062684487271}
   - component: {fileID: 1252985062684487269}
   - component: {fileID: 1252985062684487268}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5678,7 +5678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1252985063171177170}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5708,7 +5708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1252985063480969441}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5740,7 +5740,7 @@ GameObject:
   - component: {fileID: 1252985063964139484}
   - component: {fileID: 1252985063964139482}
   - component: {fileID: 1252985063964139485}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: BGHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5850,7 +5850,7 @@ GameObject:
   - component: {fileID: 1602384516}
   - component: {fileID: 1252985064190651514}
   - component: {fileID: 850561193}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: BabyGlob
   m_TagString: BabyGlob
   m_Icon: {fileID: 0}
@@ -6076,7 +6076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1252985064203175585}
   - component: {fileID: 1252985064203175598}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Baby_Happy
   m_TagString: Happy
   m_Icon: {fileID: 0}
@@ -6157,7 +6157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2183893911856608644}
   - component: {fileID: 5692292174116457216}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}

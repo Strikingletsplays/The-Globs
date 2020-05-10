@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 18021919}
   - component: {fileID: 18021918}
   - component: {fileID: 18021917}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DropWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 114345268}
   - component: {fileID: 114345270}
   - component: {fileID: 114345269}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Move Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1593,7 +1593,7 @@ GameObject:
   - component: {fileID: 155904751}
   - component: {fileID: 155904753}
   - component: {fileID: 155904752}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1750,7 +1750,7 @@ GameObject:
   - component: {fileID: 156376199}
   - component: {fileID: 156376198}
   - component: {fileID: 156376197}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EatAGlob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2360,7 +2360,7 @@ GameObject:
   - component: {fileID: 229921891}
   - component: {fileID: 229921890}
   - component: {fileID: 229921889}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MoveForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,7 +2628,7 @@ GameObject:
   - component: {fileID: 286588776}
   - component: {fileID: 286588775}
   - component: {fileID: 286588774}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Use Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9247,7 +9247,7 @@ GameObject:
   - component: {fileID: 429113082}
   - component: {fileID: 429113081}
   - component: {fileID: 429113080}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9703,7 +9703,7 @@ GameObject:
   - component: {fileID: 478566662}
   - component: {fileID: 478566661}
   - component: {fileID: 478566660}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10490,7 +10490,7 @@ GameObject:
   - component: {fileID: 601961596}
   - component: {fileID: 601961598}
   - component: {fileID: 601961597}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10908,7 +10908,7 @@ GameObject:
   - component: {fileID: 608819187}
   - component: {fileID: 608819186}
   - component: {fileID: 608819185}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11420,7 +11420,7 @@ GameObject:
   - component: {fileID: 647624295}
   - component: {fileID: 647624294}
   - component: {fileID: 647624293}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11630,7 +11630,7 @@ GameObject:
   - component: {fileID: 656121216}
   - component: {fileID: 656121218}
   - component: {fileID: 656121217}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Use Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11995,7 +11995,7 @@ GameObject:
   - component: {fileID: 688951524}
   - component: {fileID: 688951526}
   - component: {fileID: 688951525}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Drop Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12151,7 +12151,7 @@ GameObject:
   - component: {fileID: 694779403}
   - component: {fileID: 694779405}
   - component: {fileID: 694779404}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12515,7 +12515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718868216}
   - component: {fileID: 718868217}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13287,7 +13287,7 @@ GameObject:
   - component: {fileID: 735381699}
   - component: {fileID: 735381701}
   - component: {fileID: 735381700}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13563,7 +13563,7 @@ GameObject:
   - component: {fileID: 748563291}
   - component: {fileID: 748563290}
   - component: {fileID: 748563289}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14886,7 +14886,7 @@ GameObject:
   - component: {fileID: 854509128}
   - component: {fileID: 854509130}
   - component: {fileID: 854509129}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15250,7 +15250,7 @@ GameObject:
   - component: {fileID: 871168945}
   - component: {fileID: 871168947}
   - component: {fileID: 871168946}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15277,7 +15277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.26637268}
+  m_AnchoredPosition: {x: 0, y: -0.26635742}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871168946
@@ -15925,7 +15925,7 @@ GameObject:
   - component: {fileID: 926505983}
   - component: {fileID: 926505985}
   - component: {fileID: 926505984}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16912,7 +16912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998521328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.354, y: -0.037, z: 0}
+  m_LocalPosition: {x: 0.35, y: -0.037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1491291019}
@@ -18336,7 +18336,7 @@ GameObject:
   - component: {fileID: 1089518066}
   - component: {fileID: 1089518068}
   - component: {fileID: 1089518067}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19428,7 +19428,7 @@ GameObject:
   - component: {fileID: 1153800140}
   - component: {fileID: 1153800142}
   - component: {fileID: 1153800141}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Move Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20203,7 +20203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1203951148}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ButtonsControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20322,7 +20322,7 @@ GameObject:
   - component: {fileID: 1204690531}
   - component: {fileID: 1204690533}
   - component: {fileID: 1204690532}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Pick Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21395,7 +21395,7 @@ GameObject:
   - component: {fileID: 1265616984}
   - component: {fileID: 1265616986}
   - component: {fileID: 1265616985}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22822,7 +22822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371844983}
   - component: {fileID: 3558965528851238988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24813,7 +24813,7 @@ GameObject:
   - component: {fileID: 1582902501}
   - component: {fileID: 1582902503}
   - component: {fileID: 1582902502}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Eat Glob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25223,7 +25223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602495772}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TextsControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25598,7 +25598,7 @@ GameObject:
   - component: {fileID: 1624519538}
   - component: {fileID: 1624519540}
   - component: {fileID: 1624519539}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26935,7 +26935,7 @@ GameObject:
   - component: {fileID: 1744576961}
   - component: {fileID: 1744576963}
   - component: {fileID: 1744576962}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27563,7 +27563,7 @@ GameObject:
   - component: {fileID: 1810985411}
   - component: {fileID: 1810985410}
   - component: {fileID: 1810985409}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaterParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32812,7 +32812,7 @@ GameObject:
   - component: {fileID: 1854838681}
   - component: {fileID: 1854838680}
   - component: {fileID: 1854838679}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MoveBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38151,7 +38151,7 @@ GameObject:
   - component: {fileID: 1902185470}
   - component: {fileID: 1902185472}
   - component: {fileID: 1902185471}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39044,7 +39044,7 @@ GameObject:
   - component: {fileID: 1992711388}
   - component: {fileID: 1992711390}
   - component: {fileID: 1992711389}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39551,7 +39551,7 @@ GameObject:
   - component: {fileID: 2027539624}
   - component: {fileID: 2027539626}
   - component: {fileID: 2027539625}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40509,6 +40509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ca094c5f61f7e458143b03fbe9f7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rayLength: 1
+  PickableLayers:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!224 &2067544750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42562,7 +42566,7 @@ GameObject:
   - component: {fileID: 950423545768070783}
   - component: {fileID: 4248848789202195618}
   - component: {fileID: 8865898436075349685}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: aple (2)
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -42604,11 +42608,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1252985062443056699, guid: 3a8a1989db853f44794a6fa7347bae3c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1252985062670378481, guid: 3a8a1989db853f44794a6fa7347bae3c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -42678,16 +42677,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951429383172951027, guid: 3a8a1989db853f44794a6fa7347bae3c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 163
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951429383172951027, guid: 3a8a1989db853f44794a6fa7347bae3c,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000030517578
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8a1989db853f44794a6fa7347bae3c, type: 3}
@@ -42839,7 +42828,7 @@ GameObject:
   - component: {fileID: 1492679148804506280}
   - component: {fileID: 2553940787816732789}
   - component: {fileID: 7101725041304939106}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: aple (1)
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -43897,7 +43886,7 @@ GameObject:
   - component: {fileID: 6733663538101105375}
   - component: {fileID: 7688949771173013506}
   - component: {fileID: 3119778229290670613}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: aple (3)
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -44112,7 +44101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7142864502635781058}
   - component: {fileID: 5927705921845672697}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44254,7 +44243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7142864503492428588}
   - component: {fileID: 5927705922769297943}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44945,7 +44934,7 @@ GameObject:
   - component: {fileID: 7773359310169044365}
   - component: {fileID: 6640242365817384784}
   - component: {fileID: 2151013703586405703}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: aple
   m_TagString: Food
   m_Icon: {fileID: 0}
