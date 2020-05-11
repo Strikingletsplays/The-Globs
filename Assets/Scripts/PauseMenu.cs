@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour 
 {
@@ -15,6 +16,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject OptionsMenuUI;
     public Light2D GlobalLight;
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
 
     void Update()
     {
@@ -51,6 +56,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
+        Cursor.visible = false;
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

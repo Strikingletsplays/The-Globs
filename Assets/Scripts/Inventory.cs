@@ -10,13 +10,14 @@ public class Inventory : MonoBehaviour
 
     public void addItem(GameObject obj)
     {
-       if (IPanel1.transform.childCount == 0)
-       {
+        if (IPanel1.transform.childCount == 0)
+        {
             Item = Instantiate(obj) as GameObject;
             Item.transform.parent = IPanel1.transform;
             Item.transform.position = IPanel1.transform.position;
             Item.transform.localScale = new Vector3(1f, 1f, 1f);
-        } else if (IPanel2.transform.childCount == 0)
+        }
+        else if (IPanel2.transform.childCount == 0)
         {
             Item = Instantiate(obj) as GameObject;
             Item.transform.parent = IPanel2.transform;
@@ -44,5 +45,18 @@ public class Inventory : MonoBehaviour
             Item.transform.position = IPanel5.transform.position;
             Item.transform.localScale = new Vector3(1f, 1f, 1f);
         }
+    }
+    public void RemoveItem(string obj)
+    {
+        if (IPanel1.transform.childCount > 0 && IPanel1.transform.GetChild(0).tag == obj)
+              Destroy(IPanel1.transform.GetChild(0).gameObject);
+        else if (IPanel2.transform.childCount > 0 && IPanel2.transform.GetChild(0).tag == obj)
+                Destroy(IPanel2.transform.GetChild(0).gameObject);
+        else if (IPanel3.transform.childCount > 0 && IPanel3.transform.GetChild(0).tag == obj)
+                Destroy(IPanel3.transform.GetChild(0).gameObject);
+        else if (IPanel4.transform.childCount > 0 && IPanel4.transform.GetChild(0).tag == obj)
+                Destroy(IPanel4.transform.GetChild(0).gameObject);
+        else if (IPanel5.transform.childCount > 0 && IPanel5.transform.GetChild(0).tag == obj)
+                Destroy(IPanel5.transform.GetChild(0).gameObject);
     }
 }

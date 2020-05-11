@@ -12,8 +12,6 @@ TagManager:
   - PickUp
   - GameScripts
   - PressFtoEat
-  - Background
-  - VolumeSlider
   - Boss
   - CaveBackground
   - GlowBar
@@ -22,7 +20,7 @@ TagManager:
   - AI
   - InventoryPanel
   - Keys
-  - KeysUI
+  - Water
   - WaterGunUI
   layers:
   - Default

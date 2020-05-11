@@ -13,6 +13,8 @@ public class DropFood : MonoBehaviour
     bool isTime = true;
     private float distance;
 
+    public GameObject Aple;
+
     //Sound
     public AudioSource Shake;
     private void Start()
@@ -53,7 +55,6 @@ public class DropFood : MonoBehaviour
             if (apples[i] == null)
                 apples.Remove(apples[i]);
         }
-
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -72,5 +73,26 @@ public class DropFood : MonoBehaviour
     {
         isTime = true;
         anim.SetBool("isShaking", false);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Water")
+        {
+            GrowAples();
+        }
+    }
+    public void GrowAples()
+    {
+        GameObject newAple = Instantiate(Aple, transform.parent.GetComponentInParent<Transform>());
+        newAple.transform.position = transform.position + new Vector3(0, 1, 0);
+        newAple.GetComponent<Rigidbody2D>().simulated = false;
+        apples.Add(newAple);
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.tag == "Water" && apples.Count == 0)
+        {
+            GrowAples();
+        }
     }
 }

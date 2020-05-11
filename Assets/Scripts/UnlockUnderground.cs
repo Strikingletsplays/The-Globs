@@ -5,7 +5,12 @@ public class UnlockUnderground : MonoBehaviour
 {
     private GameObject toDelete;
     public Image PressFtoUnlock;
+    private Inventory Inventory;
 
+    private void Start()
+    {
+        Inventory = GameObject.FindGameObjectWithTag("InventoryPanel").GetComponent<Inventory>();
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -18,7 +23,7 @@ public class UnlockUnderground : MonoBehaviour
                 if (Input.GetKey(KeyCode.F))
                 {
                     PressFtoUnlock.enabled = false;
-                    Destroy(toDelete);
+                    Inventory.RemoveItem("KeysUI");
                     Destroy(this.gameObject);
                 }
             }

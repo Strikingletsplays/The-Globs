@@ -16,7 +16,6 @@ public class keys : MonoBehaviour
         {
             //InventoryUI
             Inventory.addItem(keysGO);
-
             Destroy(this.gameObject);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterGun : MonoBehaviour
@@ -9,7 +10,6 @@ public class WaterGun : MonoBehaviour
     //For inventory UI
     private Inventory Inventory;
     public GameObject WaterGunGO;
-    private GameObject toDelete;
     private void Start()
     {
         Inventory = GameObject.FindGameObjectWithTag("InventoryPanel").GetComponent<Inventory>();
@@ -22,8 +22,7 @@ public class WaterGun : MonoBehaviour
         {
             StartCoroutine(DisableTrigger(2f));
             isHoldingGun = false;
-            toDelete = GameObject.FindGameObjectWithTag("WaterGunUI");
-            Destroy(toDelete);
+            Inventory.RemoveItem("WaterGunUI");
         }
     }
 
@@ -39,9 +38,10 @@ public class WaterGun : MonoBehaviour
             GetComponent<PolygonCollider2D>().enabled = false;
             //fix guns (position-rotation) and position to Destinations
             transform.position += new Vector3(0f, 0.1f, 0f);
-            transform.position = GameObject.Find("Destination").transform.position;
             //make parent
             transform.parent = GameObject.Find("Destination").transform;
+            transform.position = GameObject.Find("Destination").transform.position;
+
 
             //fix rotation of gun
             if (controller.gameObject.transform.position.x > this.transform.position.x)
@@ -55,7 +55,6 @@ public class WaterGun : MonoBehaviour
             //Enable Ui (To-Do)
         }
     }
-    //Need to fix
     IEnumerator DisableTrigger(float time)
     {
         //set parent to null

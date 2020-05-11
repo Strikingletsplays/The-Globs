@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
+    //This script calls the animator states
     private Animator EnemyAnim;
     private Transform PlayerPos;
     public float MinDistance = 8;
-    public PlayerHealth PlayerHealth;
+    private PlayerHealth PlayerHealth;
     GameObject parent;
     private void Start()
     {
+        PlayerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         EnemyAnim = GetComponent<Animator>();
         parent = this.transform.parent.gameObject;
     }
@@ -20,6 +22,7 @@ public class ChasePlayer : MonoBehaviour
         PlayerPos = GameObject.FindGameObjectWithTag("Player").transform;
         if (Vector2.Distance(transform.position, PlayerPos.position) < MinDistance)
         {
+            //For flying enemy
             if (parent.tag == "AI")
             {
                 parent.GetComponent<AIPath>().canMove = true;
