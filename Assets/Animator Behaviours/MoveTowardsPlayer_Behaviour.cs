@@ -7,7 +7,7 @@ public class MoveTowardsPlayer_Behaviour : StateMachineBehaviour
 {
     private Transform player;
     private Transform Enemy;
-    private float Speed = 3;
+    private float Speed = 2;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

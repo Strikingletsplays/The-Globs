@@ -23,6 +23,9 @@ public class BabyHealth : MonoBehaviour
     bool inDarckness = false;
     private Image GlobsNeedGlow;
 
+    //Particle System Damage
+    public ParticleSystem DamagePS;
+
     private void Start()
     {
         GlobsNeedGlow = GameObject.FindGameObjectWithTag("GlobsNeedGlow").GetComponent<Image>();
@@ -77,6 +80,7 @@ public class BabyHealth : MonoBehaviour
     }
     public void TakeDamage()
     {
+        DamagePS.Play();
         Health--;
         HealthBar.SetHealth(Health);
         //Play sound
@@ -110,7 +114,6 @@ public class BabyHealth : MonoBehaviour
         transform.Find("Canvas").gameObject.SetActive(false);
         //disable player sprite
         GetComponent<SpriteRenderer>().enabled = false;
-        //GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         Destroy(gameObject,0.4f);

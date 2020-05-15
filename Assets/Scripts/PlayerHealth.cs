@@ -23,9 +23,12 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource BabyGlobCreate;
     public AudioSource NomNomNom;
 
+    //Particle system (damage)
+    public ParticleSystem DamagePS;
+
     //Shake
-    public float DamageShakeDuration = 0.3f;
-    public float DamageShakeAmplitude = 1.2f;
+    private float DamageShakeDuration = 0.3f;
+    private float DamageShakeAmplitude = 1.2f;
     private float DamageShakeElapsedTime = 0f;
 
     //glow
@@ -108,7 +111,9 @@ public class PlayerHealth : MonoBehaviour
     public void eatBaby()
     {
         NomNomNom.Play();
-        Destroy(Instantiate(EatingParticles, transform.position, transform.rotation), 1f);
+        GameObject temp = Instantiate(EatingParticles, transform.position, transform.rotation);
+        temp.transform.parent = transform;
+        Destroy(temp, 1f);
     }
     public void TakeDamage()
     {
@@ -122,6 +127,7 @@ public class PlayerHealth : MonoBehaviour
             ScaleChangeSize = new Vector3(0.3f, -0.3f, -0.3f);
             this.transform.localScale += ScaleChangeSize;
         }
+        DamagePS.Play();
         Hurt.Play();
         Health -= 1;
         healthbar.SetHealth(Health);

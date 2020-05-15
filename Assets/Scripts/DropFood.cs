@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,23 +75,17 @@ public class DropFood : MonoBehaviour
         isTime = true;
         anim.SetBool("isShaking", false);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Water")
-        {
-            GrowAples();
-        }
-    }
     public void GrowAples()
     {
         GameObject newAple = Instantiate(Aple, transform.parent.GetComponentInParent<Transform>());
-        newAple.transform.position = transform.position + new Vector3(0, 1, 0);
+        newAple.transform.position = transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(0.6f, 1.1f), 0);
         newAple.GetComponent<Rigidbody2D>().simulated = false;
         apples.Add(newAple);
     }
     private void OnParticleCollision(GameObject other)
     {
-        if (other.tag == "Water" && apples.Count == 0)
+        int randNum = Random.Range(0, 300);
+        if (other.tag == "Water" && apples.Count < 4 && randNum > 250)
         {
             GrowAples();
         }
