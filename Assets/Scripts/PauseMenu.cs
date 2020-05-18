@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public AudioMixer Effects;
     public static bool GameIsPaused = false;
     public bool Options = false;
+    public bool Controls = false;
     public GameObject Camera;
     public GameObject PauseMenuUI;
     public GameObject OptionsMenuUI;
@@ -25,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused && !Options)
+            if (GameIsPaused && !Options && !Controls)
             {
                 Resume();
             }else if(GameIsPaused && Options)
@@ -45,6 +46,14 @@ public class PauseMenu : MonoBehaviour
     public void Brightness(float intensity)
     {
         GlobalLight.intensity = intensity;
+    }
+    public void ControlsAreUp()
+    {
+        Controls = true;
+    }
+    public void ControlsAreDown()
+    {
+        Controls = false;
     }
     public void OptionsIsUp()
     {

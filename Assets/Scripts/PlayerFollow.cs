@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerFollow : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerFollow : MonoBehaviour
 
     //Flip canvas
     public Canvas Canvas;
+    public Image noView;
 
     //Sound
     public AudioSource Jump;
@@ -40,9 +42,10 @@ public class PlayerFollow : MonoBehaviour
                 m_Grounded = true;
             }
         }
-
+        noView.enabled = true;
         if (Vector2.Distance(transform.position, Player.position) < FollowRange)
         {
+            noView.enabled = false;
             if (!(Vector2.Distance(transform.position, Player.position) < stopRange))
             {
                 transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.fixedDeltaTime);

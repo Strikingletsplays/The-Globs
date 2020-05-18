@@ -13,7 +13,7 @@ public class Crosshair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)), Vector2.zero, Color.red);
+        //Debug.DrawLine(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10)), Vector2.zero, Color.red);
         MoveCrosshair();
         if (Input.GetMouseButtonDown(0))
         {

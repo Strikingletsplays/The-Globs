@@ -6,7 +6,7 @@ public class SpawnWater : MonoBehaviour
 {
     public GameObject FirePoint;
     public GameObject Water;          //water obj.
-    public GameObject waterPS = null;  //particles to spawn
+    private GameObject waterPS = null;  //particles to spawn
     private Transform Player;         //for rotation
     private WaterGun WaterGun;
 

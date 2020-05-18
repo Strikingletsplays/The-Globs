@@ -1,6 +1,4 @@
-﻿using Pathfinding;
-using UnityEditor.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ChasePlayer : MonoBehaviour
@@ -98,10 +96,11 @@ public class ChasePlayer : MonoBehaviour
             }
         }
     }
-    void DisableAnimator()
+    void DisableBoss()
     {
         //SET SPRITE TO DEAD.
         GetComponent<SpriteRenderer>().sprite = dead;
+        BossHealthBar.transform.parent.gameObject.SetActive(false);
         GetComponent<Animator>().enabled = false;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<BoxCollider2D>().enabled = false;

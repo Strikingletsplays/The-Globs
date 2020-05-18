@@ -124,7 +124,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.6333333
-    functionName: DisableAnimator
+    functionName: DisableBoss
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -10,8 +10,9 @@ public class BabyHealth : MonoBehaviour
 
     //Ui Elements
     public HealthBar HealthBar;
-    public GameObject Hungry; 
-    public GameObject Happy;
+    public Image Hungry; 
+    public Image Happy;
+    public Image noView;
 
     //Sound
     public AudioSource Dead;
@@ -31,8 +32,8 @@ public class BabyHealth : MonoBehaviour
         GlobsNeedGlow = GameObject.FindGameObjectWithTag("GlobsNeedGlow").GetComponent<Image>();
         HealthBar.SetMaxHealth(MaxHealth);
         HealthBar.SetHealth(Health);
-        Hungry.GetComponent<SpriteRenderer>().enabled = true;
-        Happy.GetComponent<SpriteRenderer>().enabled = false;
+        Hungry.enabled = true;
+        Happy.enabled = false;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -41,18 +42,18 @@ public class BabyHealth : MonoBehaviour
         if(Health >= MaxHealth)
         {
             //enable happy UI
-            Happy.GetComponent<SpriteRenderer>().enabled = true;
+            Happy.enabled = true;
+            Hungry.enabled = false;
             HealthBar.enabled = false;
-            Hungry.GetComponent<SpriteRenderer>().enabled = false;
             Health = MaxHealth;
             Glow.intensity = 0.4f;
         }
         else
         {
             //enable hungry UI
-            Happy.GetComponent<SpriteRenderer>().enabled = false;
+            Happy.enabled = false;
+            Hungry.enabled = true;
             HealthBar.enabled = true;
-            Hungry.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
     public void increceHealth()
